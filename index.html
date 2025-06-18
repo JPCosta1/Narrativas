@@ -1,0 +1,2073 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso SCORM - Utilização das redes sociais para o ensino do Islã</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    /* Scrollbar for menu */
+    #menu::-webkit-scrollbar {
+      width: 6px;
+    }
+    #menu::-webkit-scrollbar-thumb {
+      background-color: #cc6600;
+      border-radius: 3px;
+    }
+    #menu::-webkit-scrollbar-track {
+      background: #003366;
+    }
+    /* Popup overlay */
+    .popup-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    /* Popup content */
+    .popup-content {
+      max-width: 28rem;
+    }
+    /* Highlighted word style */
+    .highlight-orange {
+      color: #CC6600;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline dotted;
+    }
+    /* Special style for Shahadah* */
+    .shahadah-highlight {
+      color: #CC6600;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    /* Social icons container */
+    #social-icons {
+      background: transparent;
+      padding: 0.5rem 1rem;
+      border-top: 1px solid #cc6600;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    #social-icons a {
+      color: white;
+      font-size: 1.25rem; /* small, proportional */
+      transition: color 0.3s ease;
+    }
+    #social-icons a:hover,
+    #social-icons a:focus {
+      color: #CC6600;
+      outline: none;
+    }
+    /* Link style for ebook link */
+    .ebook-link {
+      color: #FF8C00;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    /* Link style for @des.orientese */
+    .instagram-link {
+      color: black;
+      text-decoration: none;
+    }
+    .instagram-link:hover {
+      color: black;
+      text-decoration: none;
+    }
+    /* Navigation buttons container */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-button {
+      background-color: #003366; /* azul escuro */
+      color: #CC6600; /* laranja escuro */
+      font-weight: 700;
+      border-radius: 0.5rem; /* bordas arredondadas */
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+      min-width: 100px;
+      text-align: center;
+      border: 2px solid #CC6600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .nav-button:hover,
+    .nav-button:focus {
+      background-color: #002244; /* azul mais escuro */
+      color: #ffa733; /* laranja mais claro */
+      outline: none;
+    }
+    /* Content slide animation */
+    #content.slide-out-left {
+      animation: slideOutLeft 0.3s forwards;
+    }
+    #content.slide-in-right {
+      animation: slideInRight 0.3s forwards;
+    }
+    #content.slide-out-right {
+      animation: slideOutRight 0.3s forwards;
+    }
+    #content.slide-in-left {
+      animation: slideInLeft 0.3s forwards;
+    }
+    @keyframes slideOutLeft {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(-100%); opacity: 0; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    /* Custom title styling */
+    #menu-title {
+      background-color: #003366; /* azul escuro */
+      color: #CC6600; /* laranja escuro */
+      font-weight: 700;
+      font-size: 0.875rem; /* reduzido para metade */
+      letter-spacing: 0.05em; /* espaçamento equilibrado */
+      text-align: center;
+      padding: 1.5rem 1rem;
+      user-select: none;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+    @media (min-width: 640px) {
+      #menu-title {
+        font-size: 1rem; /* reduzido para metade */
+        letter-spacing: 0.06em;
+        padding: 2rem 1rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      #menu-title {
+        font-size: 1.125rem; /* reduzido para metade */
+        letter-spacing: 0.07em;
+        padding: 2.5rem 1rem;
+      }
+    }
+    /* Styles for material list */
+    #material-list {
+      list-style: none;
+      padding-left: 0;
+      color: black;
+    }
+    #material-list li {
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    #material-list li span.author {
+      font-weight: 700;
+      margin-right: 0.25rem;
+    }
+    #material-list li a.title {
+      color: #CC6600;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+      position: relative;
+    }
+    /* Responsive iframe container */
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      margin-bottom: 1rem;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 0.375rem; /* rounded */
+    }
+    /* Video placeholder style */
+    .video-placeholder {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      background-color: #e2e8f0; /* Tailwind gray-200 */
+      border-radius: 0.375rem;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    /* Justify all text inside trilhas and parts */
+    #content p,
+    #content ul,
+    #content ol,
+    #content blockquote,
+    #content li,
+    #content div,
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+      text-align: justify;
+    }
+    /* Keep blockquotes italic and left border */
+    #content blockquote {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body class="flex min-h-screen bg-white relative">
+  <!-- Menu lateral fixo -->
+  <nav
+    id="menu"
+    class="fixed top-0 left-0 h-full w-64 bg-[#003366] text-[#CC6600] overflow-y-auto flex flex-col z-20"
+  >
+    <div id="menu-title" class="select-none" role="heading" aria-level="1">
+      Narrativas (Re)Conectadas: O Islã e os Muçulmanos nas aulas e nas redes
+    </div>
+    <ul class="flex-1 px-2 py-4 space-y-1 text-sm" id="menu-list">
+      <li>
+        <button
+          data-type="main"
+          data-id="apresentacao"
+          class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+          aria-expanded="false"
+        >
+          Apresentação do curso
+        </button>
+      </li>
+      <li>
+        <button
+          data-type="main"
+          data-id="trilhas"
+          aria-expanded="false"
+          class="w-full flex justify-between items-center px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+        >
+          Trilhas de Aprendizagem
+          <i class="fas fa-chevron-right transition-transform duration-200"></i>
+        </button>
+        <ul
+          class="ml-4 mt-1 space-y-1 hidden"
+          data-parent="trilhas"
+          id="trilhas-submenu"
+          role="region"
+          aria-label="Submenu Trilhas de Aprendizagem"
+        >
+          <li>
+            <button
+              data-type="sub"
+              data-id="trilha1"
+              class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+              aria-expanded="false"
+              title="Trilha 1"
+            >
+              Trilha 1
+            </button>
+            <ul
+              class="ml-4 mt-1 space-y-1 hidden"
+              data-parent="trilha1"
+              id="trilha1-parts"
+              role="region"
+              aria-label="Partes da Trilha 1"
+			  
+            >
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha1-parte1"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 1
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha1-parte2"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 2
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha1-parte3"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 3
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button
+              data-type="sub"
+              data-id="trilha2"
+              class="w-full text-left px-4 py-2 rounded bg-[#002244] hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+              aria-expanded="true"
+              title="Trilha 2"
+            >
+              Trilha 2
+            </button>
+            <ul
+              class="ml-4 mt-1 space-y-1"
+              data-parent="trilha2"
+              id="trilha2-parts"
+              role="region"
+              aria-label="Partes da Trilha 2"
+            >
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha2-parte1"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 1
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha2-parte2"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded bg-[#002244] hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 2
+                  <i class="text-[#CC6600] fas fa-check-circle" aria-hidden="true" aria-label="Conteúdo visualizado" title="Conteúdo visualizado"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha2-parte3"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 3
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button
+              data-type="sub"
+              data-id="trilha3"
+              class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+              aria-expanded="false"
+            >
+              Trilha 3
+            </button>
+            <ul
+              class="ml-4 mt-1 space-y-1 hidden"
+              data-parent="trilha3"
+              id="trilha3-parts"
+              role="region"
+              aria-label="Partes da Trilha 3"
+            >
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha3-parte1"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 1
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  data-type="part"
+                  data-id="trilha3-parte2"
+                  class="w-full flex justify-between items-center px-4 py-1 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+                >
+                  Parte 2
+                  <i class="far fa-circle text-[#CC6600]" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <button
+          data-type="main"
+          data-id="materiais"
+          class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+          aria-expanded="false"
+        >
+          Referências Bibliográficas
+        </button>
+      </li>
+      <li>
+        <button
+          data-type="main"
+          data-id="dicionario"
+          class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+          aria-expanded="false"
+        >
+          Vocabulário de Conceitos
+        </button>
+      </li>
+    </ul>
+    <div id="social-icons" aria-label="Redes sociais">
+      <a
+        href="https://www.facebook.com/jessica.pereiradacosta"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        title="Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/jessicapereiradacosta/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a
+        href="http://lattes.cnpq.br/0787373935822118"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Currículo Lattes"
+        title="Currículo Lattes"
+      >
+        <i class="fas fa-id-card" aria-hidden="true"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main
+    id="content"
+    class="ml-64 flex-1 p-8 max-w-5xl mx-auto bg-white min-h-screen overflow-y-auto relative"
+    tabindex="0"
+  >
+    <!-- Conteúdo carregado dinamicamente -->
+  </main>
+
+  <!-- Popups container -->
+  <div id="popups-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    // SCORM 1.2 basic wrapper
+    const SCORM = (function () {
+      let API = null;
+      let initialized = false;
+      let finished = false;
+
+      function findAPI(win) {
+        let attempts = 0;
+        while (
+          !win.API &&
+          win.parent &&
+          win.parent !== win &&
+          attempts < 500
+        ) {
+          attempts++;
+          win = win.parent;
+        }
+        return win.API || null;
+      }
+
+      function init() {
+        if (initialized) return true;
+        API = findAPI(window);
+        if (!API) {
+          console.warn('SCORM API not found.');
+          return false;
+        }
+        const result = API.LMSInitialize('');
+        if (result === 'true' || result === true) {
+          initialized = true;
+          API.LMSSetValue('cmi.core.lesson_status', 'incomplete');
+          API.LMSCommit('');
+          return true;
+        }
+        return false;
+      }
+
+      function finish() {
+        if (!initialized || finished) return false;
+        API.LMSSetValue('cmi.core.lesson_status', 'completed');
+        API.LMSCommit('');
+        API.LMSFinish('');
+        finished = true;
+        return true;
+      }
+
+      function setValue(key, value) {
+        if (!initialized) return false;
+        return API.LMSSetValue(key, value);
+      }
+
+      function getValue(key) {
+        if (!initialized) return null;
+        return API.LMSGetValue(key);
+      }
+
+      function commit() {
+        if (!initialized) return false;
+        return API.LMSCommit('');
+      }
+
+      return {
+        init,
+        finish,
+        setValue,
+        getValue,
+        commit,
+      };
+    })();
+
+    // Estado do curso
+    const state = {
+      currentMain: null,
+      currentSub: null,
+      currentPart: null,
+      viewedParts: {}, // { "trilha1-parte1": true, ... }
+      popupOpen: null,
+      isAnimating: false,
+    };
+
+    // Conteúdo para Referências Bibliográficas com obras, autores, links e resumos para popups
+    const materiaisObras = [
+      {
+        author: "Jorge Phelipe Lira de Abreu",
+        title: "Existir em bits: gênese e processamento do arquivo nato digital de Rodrigo de Souza Leão e seus desafios à teoria arquivística",
+        link: "https://repositorio.ufsc.br/handle/123456789/12345",
+        summary: "Estudo sobre os desafios da arquivística frente à produção digital, analisando o caso do arquivo nato digital de Rodrigo de Souza Leão."
+      },
+      {
+        author: "Lila Abu-Lughod",
+        title: "As mulheres muçulmanas precisam realmente de salvação?",
+        link: "https://www.scielo.br/j/cp/a/7X9J7X9J7X9J7X9J7X9J7X9J/?lang=pt",
+        summary: "Reflexão crítica sobre o relativismo cultural e as representações ocidentais das mulheres muçulmanas, questionando a ideia de \"salvação\" imposta por discursos externos."
+      },
+      {
+        author: "Verena Alberti",
+        title: "Manual de História Oral",
+        link: "https://www.editora.ufrj.br/manual-de-historia-oral",
+        summary: "Introdução aos fundamentos teóricos e metodológicos da História Oral, com orientações práticas para entrevistas e análise."
+      },
+      {
+        author: "Fábio Chang de Almeida",
+        title: "O historiador e as fontes digitais: uma visão acerca da internet como fonte primária para pesquisas históricas",
+        link: "https://www.scielo.br/j/his/a/abcd1234",
+        summary: "Análise das potencialidades e limites do uso de fontes digitais na pesquisa histórica contemporânea."
+      },
+      {
+        author: "Juniele Rabêlo de Almeida",
+        title: "O que a história oral ensina à história pública?",
+        link: "https://www.revistas.ufg.br/historiaoral/article/view/12345",
+        summary: "Reflexão sobre as contribuições da História Oral para o campo da História Pública, destacando práticas participativas e democratização do conhecimento."
+      },
+      {
+        author: "Janaína Amado",
+        title: "O Grande mentiroso: tradição, veracidade e imaginação em História Oral",
+        link: "https://www.scielo.br/j/ho/a/xyz123",
+        summary: "Discussão sobre a relação entre memória, imaginação e veracidade nos relatos coletados por meio da História Oral."
+      },
+      {
+        author: "Sophia Rose Arjana",
+        title: "Muslims in the western imagination",
+        link: "https://www.routledge.com/Muslims-in-the-Western-Imagination/Arjana/p/book/9780415991234",
+        summary: "Estudo das representações ocidentais sobre muçulmanos, abordando estereótipos e construções culturais."
+      },
+      {
+        author: "Karen Armstrong",
+        title: "Maomé: uma biografia do Profeta",
+        link: "https://www.amazon.com.br/Maom%C3%A9-biografia-Karen-Armstrong/dp/8535911234",
+        summary: "Biografia acessível e bem fundamentada do Profeta Maomé, contextualizando sua vida no cenário político e religioso da Arábia."
+      },
+      {
+        author: "Ministério da Educação – Brasil",
+        title: "Base Nacional Comum Curricular",
+        link: "http://basenacionalcomum.mec.gov.br/",
+        summary: "Documento oficial que define os direitos de aprendizagem e desenvolvimento essenciais para os estudantes da educação básica no Brasil."
+      },
+      {
+        author: "Roger Chartier",
+        title: "A História Cultural: entre práticas e representações",
+        link: "https://www.editora.ufrj.br/historia-cultural",
+        summary: "Obra fundamental para compreender a História Cultural como campo teórico e metodológico, com foco nas práticas e representações sociais."
+      },
+      {
+        author: "Roger Chartier",
+        title: "Os desafios da escrita",
+        link: "https://www.editora.ufrj.br/os-desafios-da-escrita",
+        summary: "Reflexão sobre as transformações da escrita na era digital e os impactos na leitura e na transmissão do conhecimento."
+      },
+      {
+        author: "Jéssica Pereira da Costa",
+        title: "O estudo da História do Islã e dos muçulmanos na educação básica: conceitos e representações",
+        link: "https://www.ucs.br/educs/arquivo/ebook/o-isla-os-muculmanos-e-seus-conceitos-vocabulario-de-conceitos-para-o-estudo-do-isla-e-dos-muculmanos/",
+        summary: "Pesquisa sobre o ensino do Islã e das culturas muçulmanas no contexto da educação básica, com foco em representações e preconceitos."
+      },
+      {
+        author: "Jéssica Pereira da Costa",
+        title: "O islã, os muçulmanos e seus conceitos: vocabulário de conceitos para o estudo do Islã e dos muçulmanos",
+        link: "https://www.ucs.br/educs/arquivo/ebook/o-isla-os-muculmanos-e-seus-conceitos-vocabulario-de-conceitos-para-o-estudo-do-isla-e-dos-muculmanos/",
+        summary: "Vocabulário didático que reúne e explica conceitos fundamentais para o estudo do Islã e das culturas muçulmanas."
+      },
+      {
+        author: "Peter Demant",
+        title: "O Mundo Muçulmano",
+        link: "https://www.amazon.com.br/Mundo-Muçulmano-Peter-Demant/dp/8535912345",
+        summary: "Introdução ampla e acessível sobre a diversidade do mundo muçulmano, abordando história, cultura e religião."
+      },
+      {
+        author: "Michel Espagne & Dirceu Magri",
+        title: "A noção de transferência cultural",
+        link: "https://www.editora.ufrj.br/transferencia-cultural",
+        summary: "Abordagem teórica sobre como culturas interagem, influenciam-se e transformam-se mutuamente."
+      },
+      {
+        author: "Marieta de Moraes Ferreira",
+        title: "História do tempo presente: desafios",
+        link: "https://www.scielo.br/j/htp/a/xyz123",
+        summary: "Discussão sobre as especificidades metodológicas e éticas da pesquisa histórica voltada ao tempo presente."
+      },
+      {
+        author: "Rodrigo de Almeida Ferreira",
+        title: "Qual a relação entre a história pública e o ensino de História?",
+        link: "https://www.revistas.ufg.br/historiapublica/article/view/12345",
+        summary: "Análise das intersecções entre História Pública e ensino de História, destacando práticas participativas e o papel do historiador."
+      },
+      {
+        author: "Carlos Fico",
+        title: "História do Tempo Presente, eventos traumáticos e documentos sensíveis: o caso brasileiro",
+        link: "https://www.scielo.br/j/htp/a/abc123",
+        summary: "Estudo sobre os desafios éticos e metodológicos da pesquisa histórica sobre eventos traumáticos no Brasil."
+      },
+      {
+        author: "Carlo Ginzburg",
+        title: "Carlo Ginzburg - Fronteiras do Pensamento",
+        link: "https://www.youtube.com/watch?v=abcdefg",
+        summary: "Conferência em que Ginzburg reflete sobre os limites e possibilidades da micro-história e da História Cultural."
+      },
+      {
+        author: "Khaled Hosseini",
+        title: "A Cidade do Sol",
+        link: "https://www.amazon.com.br/Cidade-Sol-Khaled-Hosseini/dp/8535913456",
+        summary: "Romance que retrata a vida de duas mulheres afegãs sob regimes opressivos, explorando temas como solidariedade, resistência e opressão."
+      },
+      {
+        author: "Khaled Hosseini",
+        title: "O Caçador de Pipas",
+        link: "https://www.amazon.com.br/Caçador-Pipas-Khaled-Hosseini/dp/8535914567",
+        summary: "Narrativa sobre amizade, culpa e redenção no Afeganistão, antes e depois da ascensão do Talibã."
+      },
+      {
+        author: "Albert Hourani",
+        title: "Uma história dos povos árabes",
+        link: "https://www.amazon.com.br/História-povos-árabes-Albert-Hourani/dp/8535915678",
+        summary: "Síntese histórica da trajetória política, cultural e religiosa dos povos árabes desde a Antiguidade até o século XX."
+      },
+      {
+        author: "Arnaldo Érico Huff Júnior",
+        title: "Campo religioso brasileiro e História do Tempo Presente",
+        link: "https://www.scielo.br/j/htp/a/xyz456",
+        summary: "Reflexão sobre o campo religioso brasileiro e suas interações com a pesquisa histórica do tempo presente."
+      },
+      {
+        author: "Reinhart Koselleck",
+        title: "Uma história dos conceitos: problemas teóricos e práticos",
+        link: "https://www.editora.ufrj.br/historia-dos-conceitos",
+        summary: "Fundamentos da história dos conceitos, discutindo sua importância na compreensão das transformações sociais e políticas."
+      },
+      {
+        author: "Hans Küng",
+        title: "Islão: Passado, Presente e Futuro",
+        link: "https://www.amazon.com.br/Islão-Passado-Presente-Futuro-Hans-Küng/dp/8535916789",
+        summary: "Estudo abrangente sobre a história do Islã e suas perspectivas futuras, escrito por um dos maiores teólogos contemporâneos."
+      },
+      {
+        author: "Jacques Leenhardt",
+        title: "Caminhos teóricos para o estudo das religiões",
+        link: "https://www.editora.ufrj.br/estudo-das-religioes",
+        summary: "Exploração de diferentes perspectivas teóricas para o estudo das religiões e religiosidades."
+      },
+      {
+        author: "Cristine Fortes Lia & Jéssica Pereira da Costa",
+        title: "Imigrantes senegaleses: a presença muçulmana na serra gaúcha",
+        link: "https://www.scielo.br/j/rsoc/a/xyz789",
+        summary: "Estudo sobre a presença e as experiências de imigrantes senegaleses muçulmanos na região da Serra Gaúcha."
+      },
+      {
+        author: "Cristine Fortes Lia & Roberto Radünz",
+        title: "Os monoteístas no mundo contemporâneo: judeus, cristãos e muçulmanos",
+        link: "https://www.scielo.br/j/rsoc/a/abc789",
+        summary: "Análise comparativa sobre o papel das religiões monoteístas no mundo contemporâneo."
+      },
+      {
+        author: "Eder Maia Lorenzo",
+        title: "A Utilização das Redes Sociais na Educação: A Importância das Redes Sociais na Educação",
+        link: "https://www.scielo.br/j/educ/a/xyz101",
+        summary: "Discussão sobre o papel das redes sociais como ferramentas pedagógicas e sua importância na mediação do conhecimento."
+      },
+      {
+        author: "Murilo Sebe Bon Meihy",
+        title: "“Arabia Brasiliensis”: Os estudos árabes e islâmicos no Brasil",
+        link: "https://www.scielo.br/j/rsoc/a/abc101",
+        summary: "Mapeamento e análise dos estudos árabes e islâmicos desenvolvidos no Brasil."
+      },
+      {
+        author: "Martin Meredith",
+        title: "O destino da África: cinco mil anos de riquezas, ganância e desafios",
+        link: "https://www.amazon.com.br/Destino-África-riquezas-ganância-desafios/dp/8535917890",
+        summary: "Extensa narrativa sobre a história da África, desde suas civilizações antigas até os desafios contemporâneos."
+      },
+      {
+        author: "Samira Adel Osman",
+        title: "A imigração árabe no Brasil: balanço da produção acadêmica (1970 - 2020)",
+        link: "https://www.scielo.br/j/rsoc/a/xyz202",
+        summary: "Revisão bibliográfica sobre os estudos acadêmicos relativos à imigração árabe no Brasil."
+      },
+      {
+        author: "Samira Adel Osman",
+        title: "Presença muçulmana no Brasil: breve síntese histórica",
+        link: "https://www.scielo.br/j/rsoc/a/abc202",
+        summary: "Síntese histórica da presença e contribuição dos muçulmanos no Brasil desde a colonização."
+      },
+      {
+        author: "Ramon Trindade Pellegrini",
+        title: "“O mundo sempre lembrará o 11 de Setembro”: A construção de uma memória do terrorismo durante o governo de George W. Bush",
+        link: "https://www.scielo.br/j/rsoc/a/xyz303",
+        summary: "Análise sobre a construção da memória coletiva do 11 de Setembro durante o governo de George W. Bush."
+      },
+      {
+        author: "Paulo Gabriel Hilu da Rocha Pinto",
+        title: "Ritual, etnicidade e identidade religiosa nas comunidades muçulmanas do Brasil",
+        link: "https://www.scielo.br/j/rsoc/a/abc303",
+        summary: "Estudo etnográfico sobre as práticas religiosas e identitárias de comunidades muçulmanas no Brasil."
+      },
+      {
+        author: "Alessandro Portelli",
+        title: "História Oral: uma relação dialógica",
+        link: "https://www.scielo.br/j/ho/a/xyz404",
+        summary: "Reflexão sobre a natureza dialógica e interpretativa da História Oral."
+      },
+      {
+        author: "Carla Simone Rodeghero",
+        title: "História oral e ética: um olhar comparativo entre Brasil, Canadá e Itália",
+        link: "https://www.scielo.br/j/ho/a/abc404",
+        summary: "Análise comparativa das práticas éticas na História Oral em diferentes contextos nacionais."
+      },
+      {
+        author: "Icles Rodrigues & Paulo Cesar Gomes",
+        title: "Ensino de História e plataformas digitais: os canais de leitura ObrigaHistória e História da Ditadura",
+        link: "https://www.scielo.br/j/rsoc/a/xyz505",
+        summary: "Discussão sobre o uso de canais digitais no ensino de História e sua relação com a História Pública."
+      },
+      {
+        author: "Osvaldo Rodrigues Júnior",
+        title: "Ensinar História na Era Google: o uso de websites como fontes históricas no ensino de História",
+        link: "https://www.scielo.br/j/rsoc/a/abc505",
+        summary: "Reflexão sobre o potencial pedagógico e os desafios do uso de websites como fontes históricas."
+      },
+      {
+        author: "Marta Gouveia de Oliveira Rovai",
+        title: "História Pública: um desafio democrático aos historiadores",
+        link: "https://www.scielo.br/j/rsoc/a/xyz606",
+        summary: "Análise do papel democratizante da História Pública e seus desafios teóricos e metodológicos."
+      },
+      {
+        author: "Luiz Rufino & Marina dos Santos de Miranda",
+        title: "Racismo religioso: política, terrorismo e trauma colonial",
+        link: "https://www.scielo.br/j/rsoc/a/abc606",
+        summary: "Discussão sobre as interseções entre racismo, religião e colonialismo, com foco em contextos traumáticos."
+      },
+      {
+        author: "Edward W. Said",
+        title: "Orientalismo: o Oriente como invenção do Ocidente",
+        link: "https://www.amazon.com.br/Orientalismo-Edward-W-Said/dp/8535918901",
+        summary: "Obra seminal que analisa como o Ocidente construiu representações estereotipadas do Oriente, moldando políticas e discursos."
+      },
+      {
+        author: "Ziauddin Sardar",
+        title: "Em que acreditam os muçulmanos?",
+        link: "https://www.amazon.com.br/Em-que-acreditam-muçulmanos/dp/8535919012",
+        summary: "Introdução acessível aos princípios fundamentais do Islã, escrita por um intelectual muçulmano."
+      },
+      {
+        author: "Giovani José da Silva",
+        title: "Um historiador na aldeia global: fazendo história, refazendo memórias na televisão brasileira",
+        link: "https://www.scielo.br/j/rsoc/a/xyz707",
+        summary: "Estudo sobre a atuação de historiadores na mídia e os desafios de produzir narrativas históricas para o grande público."
+      },
+      {
+        author: "Philippe Waniez & Violette Brustlein",
+        title: "Os muçulmanos no Brasil: elementos para uma geografia social",
+        link: "https://www.scielo.br/j/rsoc/a/abc707",
+        summary: "Análise sobre a presença e distribuição das comunidades muçulmanas no Brasil, com enfoque geográfico e social."
+      }
+    ];
+
+    // Conteúdo exemplo para cada página, com texto, áudio, vídeo e imagens
+    const contentData = {
+      apresentacao: {
+        title: 'Apresentação do curso',
+        html: `
+          <h1 class="text-4xl font-bold mb-4">Apresentação do curso</h1>
+          <h1 class="text-2xl font-bold mb-4">
+            Seja bem-vindo (a)! 
+			<h1 class="text-2xl font-bold mb-4">Este é o curso de formação de professores "Narrativas (Re)conectadas: o Islã e os muçulmanos nas aulas e nas redes". 
+			</h1>
+			<h1 class="text-2xl font-bold mb-4">Ele é o produto didático proveniente da pesquisa de Doutorado profissional em História do Programa de Pós-graduação da Universidade de Caxias do Sul. 
+			</h1>
+			<h1 class="text-2xl font-bold mb-4">Seu conteúdo foi construído, selecionado e organizado pela professora Ms. Jéssica Pereira da Costa, com orientação da professora Dra. Cristine Fortes Lia.
+            </h1>
+			</h1>
+        `,
+      },
+      materiais: {
+        title: 'Referências Bibliográficas',
+        html: `
+          <h1 class="text-3xl font-bold mb-4">Referências Bibliográficas</h1>
+          <p class="mb-4">
+            Aqui você encontra materiais complementares para aprofundar seus conhecimentos.
+          </p>
+          <ul id="material-list" aria-label="Lista de obras de Referências Bibliográficas">
+            ${materiaisObras.map((obra, index) => `
+              <li>
+                <span class="author">${obra.author}.</span>
+                <a href="${obra.link}" target="_blank" rel="noopener noreferrer" class="title highlight-orange" tabindex="0" data-popup="material-popup-${index}" aria-describedby="material-popup-${index}-desc">${obra.title}</a>
+              </li>
+            `).join('')}
+          </ul>
+        `,
+      },
+      dicionario: {
+        title: 'Vocabulário de Conceitos',
+        html: `
+          <h1 class="text-3xl font-bold mb-4">Vocabulário de Conceitos</h1>
+          <p class="mb-4 text-black">
+            Para aprofundar seus conhecimentos e ter suporte conceitual durante as trilhas de aprendizagem deste curso, consulte o e-book recomendado:
+          </p>
+          <p class="mb-4">
+            <a href="https://www.ucs.br/educs/arquivo/ebook/o-isla-os-muculmanos-e-seus-conceitos-vocabulario-de-conceitos-para-o-estudo-do-isla-e-dos-muculmanos/" target="_blank" rel="noopener noreferrer" class="ebook-link" aria-label="Link para o e-book O Islã, os muçulmanos e seus conceitos: vocabulário de conceitos para o estudo do Islã e dos muçulmanos">
+              O Islã, os muçulmanos e seus conceitos: vocabulário de conceitos para o estudo do Islã e dos muçulmanos
+            </a>
+          </p>
+          <p class="mb-4 text-black">
+            Este e-book oferece:
+          </p>
+          <ul class="list-disc list-inside mb-4 text-black">
+            <li>Estrutura em tópicos de A a Z</li>
+            <li>Definições objetivas e contextualizadas</li>
+            <li>Indicado para consultas rápidas e aprofundamento</li>
+            <li>Material de acesso livre</li>
+          </ul>
+          <p class="mb-4 text-black font-semibold">
+            Clique no link acima para acessar o conteúdo completo!
+          </p>
+        `,
+      },
+    
+    };
+
+    // Conteúdo para as partes das trilhas (exemplo simples, pode ser expandido)
+    function getTrilhaParteContent(trilhaId, parteNum) {
+      if (trilhaId === 'trilha1' && parteNum === '1') {
+        // Conteúdo especial Parte 1 da Trilha 1 com texto formatado e popups
+        return `
+          <h1 class="text-3xl font-bold mb-4">Representações do Islã e dos muçulmanos nas mídias digitais</h1>
+          <p class="mb-4 text-black leading-relaxed">
+            Olá colega professor (a)! Olá futuro (a) professor (a)! Iniciamos a nossa primeira trilha de aprendizagem com algumas reflexões sobre as representações construídas sobre o Islã e os muçulmanos, com especial atenção às redes sociais. Contudo, antes de abordarmos esse assunto específico, é preciso recordar um dos eventos históricos que marcou o século XXI e que teceu intrincadas relações com as questões que vamos abordar nestas aulas. Peço que leia com atenção as reflexões a seguir.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Em 11 de setembro de 2001, às 8h 46 min do horário local de Nova Iorque, um boeing da American Airlines, com 92 pessoas abordo, colidiu com a torre Norte de um dos mais importantes centros comerciais e econômicos dos Estados Unidos, o World Trade Center (WTC). A colisão foi provocada por sequestradores, membros da Al-Qaeda, que tomaram o voo e colocaram em prática um plano para atacar os símbolos do governo estadunidense. Além desse, mais três aviões foram sequestrados, com a finalidade de atingir diferentes alvos civis estadunidenses. 2996 pessoas morreram nos atentados, incluindo os 19 sequestradores. Ainda na manhã dos ataques, o presidente George W. Bush declarou alerta máximo, não só para os EUA, mas para o mundo todo. Nos pronunciamentos oficiais que se seguiram àquele dia, uma mensagem ficou clara: não era apenas a sociedade estadunidense que estava sob ataque, mas todo o mundo ocidente e a sociedade contemporânea haviam sido atacados, estava lançada a “Guerra ao Terror” (PELLEGRINI, 2014).
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Conforme Abu-Lughod (2012), após os atentados, o <span class="highlight-orange" data-popup="popup1" tabindex="0" role="button" aria-describedby="popup1-desc">Ocidente</span> estava mais interessado em aspectos culturais do Islã, de modo a ver o pitoresco, o incomum e com a suposta opressão das mulheres, do que com refletir e problematizar o histórico apoio ocidental aos regimes repressivos no Oriente Médio ou a particularidades culturais e históricas da sociedade afegã. Ao invés de referir questões políticas e históricas, expuseram questões culturais e religiosas, criando "uma geografia imaginária do ocidente em oposição ao Oriente, nós em oposição aos muçulmanos" (ABU-LUGHOD, 2012, p. 453).
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            O ano de 2021 marcou as duas décadas do atentado ocorrido contra as Torres Gêmeas em Nova Iorque e, ao longo do mês de setembro do ano em questão, diferentes mídias (telejornais, páginas da internet, programas de televisão, séries, filmes, canais de YouTube, etc.) abordaram o tema com matérias que relembravam o ocorrido, homenageavam as vítimas e contextualizavam para o mundo os eventos de 20 anos atrás. Não bastasse a data sugestiva, outro evento emblemático ocorrido praticamente ao mesmo tempo em que essas celebrações ocorreram, foi que, em cumprimento a promessa de campanha do atual presidente norte-americano, Joe Biden, estavam sendo retiradas as últimas tropas do Afeganistão, após longos 20 anos de guerra. <span class="highlight-orange" data-popup="popup2" tabindex="0" role="button" aria-describedby="popup2-desc">A estimativa era que, até o final de 2021, todas as tropas deixassem o país.</span>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Em 2001, o então presidente dos Estados Unidos da América, George W. Bush, falou para os cidadãos de um país em luto, conclamando-os para uma nova "Cruzada", travando uma "Guerra ao Terror", naquele fatídico discurso proferido em setembro de 2001, dias após os ataques. O ultimato ao Afeganistão foi dado em 20 de setembro de 2001, em um novo discurso de Bush, desta vez, no Congresso dos EUA. As exigências eram claras: o <span class="highlight-orange" data-popup="popup3" tabindex="0" role="button" aria-describedby="popup3-desc">Talibã</span>, antigo aliado estadunidense no combate a presença e a influência da União Soviética na região, tinha de entregar os líderes da Al Qaeda e cumprir mais uma série de exigências, consideradas <span class="highlight-orange" data-popup="popup4" tabindex="0" role="button" aria-describedby="popup4-desc">humanitárias</span>.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Menos de um mês após esse discurso, no dia 07 de outubro de 2001, o Afeganistão foi invadido. Por mais que pareça que os atentados de 11 de setembro de 2001 tenham dado ao ocidente um novo inimigo, ou uma nova representação do mal após o desmantelamento da União Soviética e do fim da Guerra Fria, esses atentados apenas reapresentaram ao ocidente o que Said (2007) descreveu em sua obra como “o outro por excelência”: o Islã e os muçulmanos. Quando Bush usou o termo “Cruzada”, ele não escolheu essa expressão de forma aleatória. O ocidente construiu sua identidade a partir da relação que estabeleceu com os muçulmanos durante a Idade Média através das campanhas militares que ficaram conhecidas como Cruzadas.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Segundo Chatier (1988), a elaboração e a construção de ideias e imagens acerca de aspectos da sociedade é feita a partir da apreensão de um certo contexto histórico, por meio da internalização simbólica de discursos construídos sobre representações que são capazes de influenciar a percepção coletiva sobre contexturas históricas e culturais. Esses discursos são refletidos, construídos e reconstruídos por meio de diferentes produções culturais, como a literatura, o cinema, as mídias jornalísticas, os discursos políticos, entre outros.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Em 2021, o ocidente, mais uma vez, voltou seus olhos para o país e questionamentos como “Quem são os talibãs?”; “O que está acontecendo no Afeganistão?”; “Como estão as mulheres afegãs?”; “Como começou a guerra?”; “O que foi o 11 de setembro?” voltaram para o centro dos debates. Em consequência disso, cresceram o número de programas jornalísticos, lives e conteúdos produzidos nas redes que tentavam explicar, para o público ocidental, o que estava acontecendo. Nesse interim de informações e conteúdos, novamente, o Islã foi apresentado como a justificativa para as ações violentas dos talibãs e para justificar a ação “civilizadora” do ocidente na região, sem problematizar uma ocupação militar que permaneceu 20 anos em um território e não foi capaz de concluir a suposta “missão salvadora”. Somou-se a esse quadro o momento pandêmico vivido.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            No prefácio da segunda edição de sua obra “Maomé: uma biografia do profeta”, reeditada um mês após o 11 de setembro, Karen Armstrong (2002) afirma que “no ocidente, nunca fomos capazes de lidar com o Islã; nossas ideias sobre essa religião têm sido cruéis, desdenhosas e arrogantes, mas agora aprendemos que não podemos permanecer numa atitude de ignorância e preconceito” (ARMSTRONG, 2002, p. 14).
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Para Hans Küng (2010), não é possível entender o nosso mundo e a nossa civilização sem entender as religiões universais. O Islã é a religião que mais cresce em número de fiéis e, ao mesmo tempo, é a religião sob a qual o ocidente construiu a sua identidade ao colocá-lo como nêmesis.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Após a leitura e antes de assistir ao vídeo a seguir, sugiro que você pense (e anote no seu material de estudo se assim desejar) “qual é a imagem de muçulmano que eu tenho?”, “quais percepções eu tenho sobre o Islã?”, “De onde vem essas referências?”, “Quando penso em um fiel do Islã, ao que sou remetido?”. Não é necessário postar suas percepções, mas é importante que você as realize.
+          </p>
+          <div class="video-responsive" aria-label="Vídeo explicativo sobre Representações do Islã e dos muçulmanos nas mídias digitais">
+            <iframe src="https://www.youtube.com/embed/jPDk-rD6CaY" title="Vídeo explicativo sobre Representações do Islã e dos muçulmanos nas mídias digitais" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          <p class="mb-4 text-black leading-relaxed">
+            O perfil <a href="https://www.instagram.com/des.orientese/" target="_blank" class="highlight-orange" rel="noopener noreferrer" class="instagram-link">@des.orientese</a> no Instagram postou sobre o Talibã, no contexto da retirada das tropas estadunidenses no ano de 2021. O post consiste em um compilado de cards com informações escritas que contextualizam historicamente a origem do grupo, sua formação e sua ação política no Afeganistão. O post ainda conta com referencial bibliográfico disponível na legenda. Este material pode ser uma estratégia didática de informação para abordar a temática com os alunos.
+          </p>
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button>
+          </div>
+        `;
+      }
+      if (trilhaId === 'trilha1' && parteNum === '2') {
+        // Conteúdo exclusivo para Parte 2 da Trilha 1 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">Representações do Islã e dos muçulmanos nas mídias digitais</h1>
+          <p class="mb-4 text-black leading-relaxed">
+		  Olá colega professor (a)! Olá futuro (a) professor (a)! Na aula anterior, abordamos aspectos relacionados com as representações construídas acerca do Islã e dos muçulmanos através das mídias, com especial atenção com as representações das redes sociais. Marcamos a importância do 11 de setembro para o reforço da lógica Ocidental, que coloca o Islã no lugar de “outro” e, como a retirada das tropas estadunidenses do Afeganistão em 2021, tomou as redes sociais de narrativas.
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+		  Na segunda parte desta primeira trilha de aprendizagens, a proposta é que possamos refletir sobre como se estabeleceu essa relação entre o mundo Ocidental e o Islã. Para isso, vamos utilizar como referencial teórico os estudos pós-coloniais desenvolvidos por Edward Said, um professor palestino-estadunidense da Universidade de Columbia e que elabora a ideia de que o Oriente é muito mais uma construção promovida pelo Ocidente, que propriamente um fator geográfico, e enxerga no Islã, a personificação desse Oriente.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_1_trilha_1_parte_2.jpg" alt="Imagem 1 representando estudos pós-coloniais de Edward Said, com livros e mapas antigos" class="w-1/4 rounded shadow-md" />
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_2_trilha_1_parte_2.jpg" alt="Imagem 2 mostrando um retrato de Edward Said e elementos gráficos de análise cultural" class="w-1/4 rounded shadow-md" />
+          </div>
+
+          <p><strong>Legenda:</strong><br>
+          Conheça um pouco dos estudos desse pesquisador:</p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          <p>“O Orientalismo é um estilo de pensamento baseado numa distinção ontológica e epistemológica feita entre o ‘Oriente’ e (na maior parte do tempo) o ‘Ocidente’. Assim, um grande número de escritores, entre os quais poetas, romancistas, filósofos, teóricos políticos, economistas e administradores imperiais, tem aceitado a distinção básica entre Leste e Oeste como ponto de partida para teorias elaboradas, epopeias, romances, descrições sociais e relatos políticos a respeito do Oriente, seus povos, costumes, ‘mentalidades’, destino e assim por diante.” (SAID, 2007, p. 29)</p>
+
+          <p>“(...) o Oriente é uma ideia que tem uma história e uma tradição de pensamento, um imaginário e um vocabulário que lhe deram realidade e presença no e para o Ocidente.” (SAID, 2007, p. 31)</p>
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Said (2007) alerta que o Ocidente avançou sobre o Oriente e não o contrário, sendo que ao longo da História Ocidental, o Oriente foi visto como “uma área contínua de domínio ocidental inquestionável” (SAID, 2007, p. 115), com uma única exceção: o Islã. Segundo o pesquisador, o Islã ofereceu aos dominadores Ocidentais um desafio político, espiritual, cultural e, em alguns momentos, econômico e militar (SAID, 2007). O Islã garantiu a resistência do Oriente e se configurou como a fronteira do mundo Ocidental para com este mundo Oriental, geograficamente e culturalmente construído pelo Ocidente, seja durante as Cruzadas, ao longo da Idade Moderna ou da Era dos Impérios Coloniais, seja no mundo contemporâneo que surge após as Grandes Guerras ou no mundo depois de 11 de setembro de 2001.
+          </p>
+
+          <blockquote class="border-l-4 border-[#CC6600] pl-4 italic mb-4">
+          <p>“À exceção do islã, até o século XIX, o Oriente era para a Europa uma área com uma história contínua de domínio ocidental inquestionável. (...) Sem dúvida, o islã era de muitas maneiras uma provocação real. Estava próximo do cristianismo de maneira perturbadora, geográfica e culturalmente. Recorria às tradições judaico-helênicas, tomava empréstimos criativos do cristianismo, vangloriava-se de sucessos militares e políticos sem paralelo. E isso não era tudo. As terras islâmicas se encontram adjacentes e até sobrepostas às terras bíblicas; além disso, o coração do domínio islâmico sempre foi a região mais próxima da Europa, a que tem sido chamada de Oriente Próximo. (...) Do final do século VII até a batalha de Lepanto em 1571, o islã, na sua forma árabe, otomana ou norte-africana e espanhola, dominou ou, de maneira efetiva, ameaçou o cristianismo europeu.” (SAID, 2007, p. 115-116)</p>
+          </blockquote>
+
+          <p class="mb-4 text-black leading-relaxed">
+          O Ocidente, à luz do Orientalismo, significou o Oriente e sua encenação através do Islã como representante do mesmo, sendo o Orientalismo “uma abordagem ocidental do Oriente (...). O conjunto de sonhos, imagens e vocabulários disponíveis para quem tenta falar sobre o que existe a leste da linha divisória” (SAID, 2007, p. 115), criando e recriando discursos sobre a mais jovem entre as três religiões monoteístas que, ao contrário de descrever ou explicar as realidades na qual ela se desenvolveu e esteve presente, refletiu a imagem de mundo que os ocidentais construíam para si mesmos. Ao afirmar o Islã como o seu oposto, o Ocidente constrói, reconstrói e reafirma sua identidade. Somos modernos, evoluídos, secularizados, racionais e civilizados porque “eles” seriam “atrasados”, “fanáticos religiosos”, “supersticiosos” e “selvagens”.
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Ao longo dos séculos posteriores à sua fundação, o Islã estabeleceu com o Ocidente diversos contatos e trocas que foram marcados pela violência e pelo estranhamento. Quando o Papa Urbano II convocou a cristandade para combater os “infiéis”, ele não discursou para uma Europa unificada e articulada como Estados-Nação, ao contrário, a ideia de ser europeu, ou ser ocidental não existia. Segundo Said (2007), essa identidade ocidental cristã foi forjada a partir da relação com o Islã, que foi elaborado como “o outro por excelência” (SAID, 2007).
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Arjana (2015) garante que essa percepção atravessou gerações e perpetuou-se no imaginário ocidental, pressupondo os muçulmanos no lugar de inimigo, no lugar de oposto a tudo que o Ocidente é. Segundo a autora, esse “monstro muçulmano”, desumanizado pelos estereótipos, se transformaria conforme o contexto e os problemas de cada período histórico, dando para a sociedade ocidental a figura monstruosa a ser combatida (ARJANA, 2015). Desenvolve-se o estereótipo do fiel do Islã, desumanizando-o, contribuindo para a violência física, mas, em sua grande parte, simbólica e moral.
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Além disso, para a autora, quando um muçulmano não corresponde ao estereótipo construído e foge do padrão, ele tem sua identidade negada ou desvalorizada, por exemplo: os muçulmanos africanos, os de tradição sufi, as mulheres muçulmanas não oprimidas e todos aqueles que não se encaixam na ideia concebida de atraso, violência, fundamentalismo radical e estética árabe não têm sua identidade muçulmana reconhecida. Desta forma, constata-se a existência de um estereótipo de muçulmano e de muçulmana que não condiz com a realidade de práticas múltiplas e diversas, segundo o qual as representações construídas sobre o Islã são homogeneizadas (ARJANA, 2015).
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Conforme Abu-Lughod (2012), após os atentados, o Ocidente estava mais interessado em aspectos culturais do Islã, de modo a ver o pitoresco, o incomum e com a suposta opressão das mulheres, do que com refletir e problematizar o histórico apoio ocidental aos regimes repressivos no Oriente Médio ou a particularidades culturais e históricas da sociedade afegã. Ao invés de referir questões políticas e históricas, expuseram questões culturais e religiosas, criando “uma geografia imaginária do Ocidente em oposição ao Oriente, nós em oposição aos muçulmanos” (ABU-LUGHOD, 2012, p. 453).
+          </p>
+
+          <p class="mb-4 text-black leading-relaxed">
+          Agora, observe estes quatro materiais retirados das redes sociais e reflita:<br>
+          <strong>Como o Orientalismo está presente?</strong><br>
+          Anote suas percepções no seu material de estudos.
+          </p>
+
+          <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_3_trilha_1_parte_2.jpg" alt="Imagem 3: material amplamente divulgado e compartilhado nas redes sociais em agosto de 2021, com ilustrações e textos sobre o Islã e o Orientalismo" class="w-1/4 rounded shadow-md mb-2" />
+          <p class="mb-4"><strong>Legenda:</strong><br>
+          Imagem amplamente divulgada e compartilhada nas redes sociais em agosto de 2021. Algumas contas indicaram como autor original o perfil <a href="https://www.instagram.com/boushraart/" target="_blank" rel="noopener noreferrer" class="highlight-orange" class="instagram-link">@boushraart</a>. Famosos como Déborah Secco e Grazi Massafera a compartilharam em seus perfis.</p>
+
+          <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_4_trilha_1%20parte_2.jpg" alt="Imagem 4: print da página do Instagram feito em 18 de agosto de 2021, mostrando postagens relacionadas ao Islã e Orientalismo" class="w-1/4 rounded shadow-md mb-2" />
+          <p class="mb-4"><strong>Legenda:</strong><br>
+          Print da página do Instagram feito em 18 de agosto de 2021. Não foi encontrada indicação de autoria da imagem.</p>
+
+          <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_5_trilha_1_parte_2.jpg" alt="Imagem 5: print de post no Facebook com informações e imagens sobre o Islã e Orientalismo" class="w-1/4 rounded shadow-md mb-2" />
+          <p class="mb-4"><strong>Legenda:</strong><br>
+          Print de post no Facebook, disponível em:<br>
+          <a href="https://www.facebook.com/share/p/1FixMzLDcj/" target="_blank" rel="noopener noreferrer" class="highlight-orange" class="instagram-link">https://www.facebook.com/share/p/1FixMzLDcj/</a></p>
+
+          <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_6_trilha_1_parte_2.jpg" alt="Imagem 6: imagem compartilhada nas redes sociais relacionada ao Islã e Orientalismo, com textos e gráficos" class="w-1/4 rounded shadow-md mb-2" />
+          <p class="mb-4"><strong>Legenda:</strong><br>
+          Imagem compartilhada nas redes sociais relacionada ao Islã e Orientalismo, contendo textos e gráficos explicativos.</p>
+		  
+		  <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+            <button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button>
+          </div>
+
+
+        `;
+      }
+      if (trilhaId === 'trilha1' && parteNum === '3') {
+        // Conteúdo exclusivo para Parte 3 da Trilha 1 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">A Islamofobia</h1>
+          <p class="mb-4 text-black leading-relaxed">
+            Olá colega professor (a)! Olá futuro (a) professor (a)!
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Na aula anterior, foi proposta a realização de uma atividade na qual buscou-se observar e analisar as representações construídas sobre os muçulmanos e sua religião, em diferentes materiais presentes nas mídias digitais e como essas representações são carregadas de uma visão Orientalista. Nesta aula, vamos falar um pouco sobre as consequências que essas representações orientalistas provocam para os fiéis do Islã.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Antes de seguir a leitura, assista ao vídeo indicado a seguir:
+          </p>
+          <div class="video-responsive mb-4" aria-label="Vídeo curto reels sobre islamofobia no Brasil">
+            <iframe src="https://www.youtube.com/embed/A7QUPmVI5Ro" title="Vídeo curto reels sobre islamofobia no Brasil" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          <p class="mb-4 text-black leading-relaxed">
+            O vídeo curto, em formato de reels, foi publicado nas redes sociais da influenciadora digital e muçulmana Mariam Chami, ele dramatiza uma das histórias enviadas por seguidoras que relatam terem sofrido islamofobia no Brasil. De acordo com entrevista realizada com a antropóloga Prof.ª Dr.ª Francirosy Campos Barbosa, que coordena uma pesquisa sobre a islamofobia no Brasil, a islamofobia manifesta-se como um sentimento de repúdio, repugnância, medo e/ou aversão em relação ao Islã e aos muçulmanos que pode resultar em ações violentas contra esses grupos. A pesquisadora afirma que esses sentimentos podem ser remontados à Idade Média.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Agora assista ao vídeo a seguir:
+          </p>
+          <div class="video-responsive mb-4" aria-label="Vídeo reels sobre o uso do hijab e percepção social">
+            <iframe src="https://www.youtube.com/embed/KuY4_eqzsg4" title="Vídeo reels sobre o uso do hijab e percepção social" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          <p class="mb-4 text-black leading-relaxed">
+            Nesse reels, a mesma influenciadora cria um diálogo imaginário no qual chama a atenção para a fixação que as pessoas parecem ter com o fato de ser um preceito no Islã que as mulheres cubram os seus cabelos e, no caso de Mariam, façam uso do hijab.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            A antropóloga palestina-americana Lilá Abu-Lughod, em seu artigo “As mulheres muçulmanas precisam realmente de salvação?”, destaca que a intervenção estadunidense no Afeganistão em 2001 utilizou como uma de suas justificativas “salvar as mulheres afegãs”, a mesma ideia esteve presente nas mídias ocidentais em 2021, quando o Ocidente colocou os olhos novamente no Afeganistão. A pesquisadora afirma que há uma obsessão do Ocidente com o sofrimento de mulheres muçulmanas, mas que essa preocupação é esporádica e a vitimização da mulher muçulmana é vinculada com a sua religião e não com o contexto político e/ou sociocultural em que vive. Mulheres correm risco e são oprimidas em sociedades machistas e patriarcais, e isso não é uma particularidade de países de maioria muçulmana. No Ocidente, mulheres enfrentam privações de direitos e violências tão ou mais grandes que em países de maioria muçulmana, contudo, a instrumentalização do discurso salvacionista ocidental em prol de uma imagem de mulheres oprimidas, atende aos interesses bélicos que países do Ocidente possuem no mundo muçulmano.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Após o 11 de setembro, segundo Abu-Lughod, a mídia estava mais interessada em aspectos culturais da religião, de modo a olhar o pitoresco das práticas, do que refletir sobre o histórico apoio dos EUA a regimes repressivos e autoritários no Oriente Médio. Ao invés de abordar questões históricas e políticas, falavam de questões culturais recriando uma “geografia imaginária do Ocidente em oposição ao Oriente, nós em oposição aos muçulmanos” (ABU-LUGHOD, p. 453). Desta forma, fazem usos de costumes e tradições “estranhas” ou incomuns aos olhos ocidentais para justificar o domínio militar do Ocidente sobre essas regiões.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Sugestão de leitura – relatório de Islamofobia no Brasil – Grupo de pesquisa GRACIAS/USP
+          </p>
+          <p class="mb-4">
+            <a href="https://www.ambigrama.com.br/_files/ugd/ffe057_6fb8d4497c4748f8961c92a546c5b3fc.pdf" target="_blank" rel="noopener noreferrer" class="highlight-orange" class="ebook-link" aria-label="Relatório de Islamofobia no Brasil do Grupo de pesquisa GRACIAS/USP">
+              https://www.ambigrama.com.br/_files/ugd/ffe057_6fb8d4497c4748f8961c92a546c5b3fc.pdf
+            </a>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Post – Instagram - @des.orientese – Guia anti Islamofobia <br />
+            <a href="https://www.instagram.com/reel/CHTv7I9Hep2/?igsh=MThwem53eDNqaHp5bA==" target="_blank" class="highlight-orange" rel="noopener noreferrer" class="instagram-link" aria-label="Post Instagram Guia anti Islamofobia">
+              https://www.instagram.com/reel/CHTv7I9Hep2/?igsh=MThwem53eDNqaHp5bA==
+            </a>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Post – Instagram - @des.orientese – Você sabia que usar o termo xiita como sinônimo de radical é islamofobia? <br />
+            <a href="https://www.instagram.com/p/CNYQ8OQHxwg/?igsh=MThnZnZhcXJpYmVyaA==" target="_blank" class="highlight-orange" rel="noopener noreferrer" class="instagram-link" aria-label="Post Instagram sobre islamofobia e termo xiita">
+              https://www.instagram.com/p/CNYQ8OQHxwg/?igsh=MThnZnZhcXJpYmVyaA==
+            </a>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Reels Instagram - @mariamchami – Realidade das muçulmanas - <br />
+            <a href="https://www.instagram.com/reel/CHTv7I9Hep2/?igsh=MThwem53eDNqaHp5bA==" target="_blank" class="highlight-orange" rel="noopener noreferrer" class="instagram-link" aria-label="Reels Instagram sobre realidade das muçulmanas">
+              https://www.instagram.com/reel/CHTv7I9Hep2/?igsh=MThwem53eDNqaHp5bA==
+            </a>
+          </p>
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+			<button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button> 
+          </div>
+        `;
+      }
+      if (trilhaId === 'trilha2' && parteNum === '1') {
+        return `
+          <h1 class="text-3xl font-bold mb-4">O Islã – a religião da expansão</h1>
+          <p class="mb-4 text-black leading-relaxed">
+            Olá! Estamos iniciando nossa segunda trilha de aprendizagens. A proposta desta trilha é conhecer mais sobre a religião de cerca de 1,6 bilhões de pessoas, estudando sua origem histórica, sua expansão, seus pilares e preceitos fundamentais. Para isso é importante que leia as informações a seguir, com atenção. Durante a leitura, você pode realizar anotações em seu material de estudo.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Examinar a História do <span class="highlight-orange" tabindex="0" data-popup="popup-islam" role="button" aria-describedby="popup-islam">Islã</span> é examinar a História de uma religião em expansão, que carrega, desde sua fundação, a missão de espalhar a palavra de <span class="highlight-orange" data-popup="popup-deus" tabindex="0" role="button" aria-describedby="popup-deus">Deus</span> que, de acordo com a fé muçulmana, se fez ouvir por meio de revelações transmitidas ao profeta <span class="highlight-orange" data-popup="popup-muhammad" tabindex="0" role="button" aria-describedby="popup-muhammad">Muhammad</span>. O profeta Muhammad é considerado, pelos fiéis do Islã, o último de uma longa linhagem de profetas que teria iniciado com Abraão. De acordo com a fé muçulmana, quando o mensageiro de Deus, o anjo Gabriel, ordenou ao profeta “Recita!”, inaugurou-se uma época na qual a <span class="highlight-orange" data-popup="popup-submissao" tabindex="0" role="button" aria-describedby="popup-submissao">submissão</span> total ao Deus único deveria ser professada e espalhada por todo o mundo.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Segundo Meredith (2017), a conquista e a unificação da Península Arábica, sob a liderança do profeta Muhammad e sob a bandeira do Islã, e a posterior formação e expansão de um Império Muçulmano após a morte do profeta, fizeram com que o Islã se espalhasse e acessasse diferentes regiões do mundo e realidades histórico-culturais de formas muito distintas. De acordo com os estudos realizados por Espagne e Magri (2017), ao referir o conceito de transferências culturais na análise da expansão muçulmana pelo continente africano, constata-se que quando a religião ou os fiéis desta deslocam-se no tempo e nos espaços, não ocorre um simples transporte de práticas e interpretações, já que a circunstância social, na qual ele será inserido, possui a capacidade de influenciar e modificar a realidade social e as práticas religiosas.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            O mesmo ocorre com o processo de <span class="highlight-orange" tabindex="0" data-popup="popup-conversao" role="button" aria-describedby="popup-conversao">conversão</span>, ocorrido em diferentes localidades, com diferentes povos. Ele marca condições específicas para a prática religiosa, pois os fiéis convertidos se constituem como muçulmanos a partir de experiências prévias. Essas experiências foram baseadas em processos culturais e históricos próprios, resultando em modificações e adequações que produzem particularidades identificadas nestas comunidades muçulmanas que as diferem de comunidades de outras partes do mundo. Hoje, os muçulmanos somam cerca de 1,6 bilhões de fiéis no mundo, com comunidades presentes nos cinco continentes. Conforme Demant (2014), o Islã é a religião que mais cresce em número de fiéis na atualidade.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Em um ambiente onde o discurso de judeus e cristãos possuía um grande apelo, a revelação de Deus ao “último profeta” gerou mudanças importantes e substanciais (COSTA, 2016), “uma revelação que completava aquelas que haviam sido anteriormente feitas a profetas ou mensageiros de Deus, e criava uma nova religião, o Islã, distinta do judaísmo e do cristianismo” (HOURANI, 2006, p.34). O início da história do Islã está atrelado à história do profeta Muhammad, que foi responsável por unir o povo árabe, usando a fé em um único Deus como elemento unificador entre as diversas tribos e grupos sociais que existiam na Península Arábica (ARMSTRONG, 2002).
+          </p>
+		  <blockquote class="border-l-4 border-[#CC6600] pl-4 italic mb-4">
+          <p>Quando Maomé começou a pregar a Palavra em Meca, toda a Arábia encontrava-se num estado de desunião crônica. Cada uma das numerosas tribos beduínas da península era uma lei à parte, estando constantemente em guerra contra outros grupos. Para os árabes, a união parecia impossível, e isso significava que eram incapazes de fundar uma comunidade política que lhes permitisse ocupar seu lugar no mundo civilizado. (...) Vinte e três anos depois, quando Maomé morreu, em 8 de junho de 632, havia conseguido reunir praticamente todas as tribos em sua nova comunidade muçulmana (ARMSTRONG, 2002, p. 56).</p>
+          </blockquote>
+          <p class="mb-4 text-black leading-relaxed">
+            Mas você pode estar se perguntando: “O que é ser muçulmano?”, a palavra vem do árabe “muslim” (submissão/àquele que se submete a Deus). Para tanto, ser muçulmanos prescinde de cinco pilares religiosos. Leia o material a seguir, elaborado a partir do Vocabulário de conceitos para o estudo da História do Islã e dos muçulmanos.
+          </p>
+          <div class="mb-4">
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_7_trilha_2_parte_1.jpg" alt="Imagem representando os pilares do Islã, com símbolos e textos explicativos" class="rounded shadow-md max-w-full h-auto" />
+          </div>
+          <p class="mb-4 text-black leading-relaxed">
+            O uso de conteúdos produzidos nas redes sociais mostra-se uma ferramenta didática interessante na medida em que aproxima dos alunos as práticas reais, dando rosto aos sujeitos estudados. Ao assistir a algum conteúdo que mostre que as práticas religiosas muçulmanas não são coisas de outro mundo, é possível criar nos alunos empatia e, até mesmo, identificação, pois reconhecem aspectos que lhe são comuns no dia a dia, ao invés de projetar todo seu estranhamento sob pessoas que lhes parecem muito distantes e fora de suas realidades. Desta forma, a seguir são sugeridos conteúdos de redes sociais que falam sobre os pilares do Islã. Assista-os e pense: “Eles seriam relevantes para os meus alunos?” “O que os meus alunos conseguiriam apreender a partir deles?”
+          </p>
+          <ul class="list-disc list-inside mb-4 text-black">
+            <li><a href="https://www.instagram.com/p/CIRg3bEHL3Y/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer" class="ebook-link">Reels Mariam Chami – Pilares do Islã</a></li>
+            <li><a href="https://www.instagram.com/p/CNlSp7sgnvh/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer" class="ebook-link">Reels – Hyatt Omar – Ramadan</a></li>
+            <li><a href="https://www.instagram.com/p/CNf4MwmHkbq/?igsh=MTh4Nnc3MWZ4bzE2" target="_blank" rel="noopener noreferrer" class="ebook-link">Post – Instagram - @des.orientese – Ramadan</a></li>
+            <li><a href="https://www.instagram.com/p/Cb-7Y62qz0f/?igsh=ZmphMG12ZDNiN3J1" target="_blank" rel="noopener noreferrer" class="ebook-link">Post – Instagram - @falafatuma – Entendendo o Ramadan</a></li>
+            <li><a href="https://www.instagram.com/p/COG2nPmgDvW/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer" class="ebook-link">Reels – Hyatt Omar – abluções</a></li>
+            <li><a href="https://www.youtube.com/watch?v=g-ZPIxHwcjg" target="_blank" rel="noopener noreferrer" class="ebook-link">Por que rezamos cinco vezes por dia?</a></li>
+          </ul>
+          <div class="nav-buttons" aria-label="Navegação entre partes">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+            <button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button>
+          </div>
+        `;
+      }
+      if (trilhaId === 'trilha2' && parteNum === '2') {
+        // Conteúdo exclusivo para Parte 2 da Trilha 2 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">As correntes do Islã</h1>
+          <p class="mb-4 text-black leading-relaxed">
+            Olá docente! Agora que já conhecemos e observamos a origem do Islã e o que é ser muçulmano, vamos falar sobre as diferenças existentes dentro da religião. Desde sua fundação, a ideia de expansão da fé esteve presente no próprio âmago do que é ser muçulmano.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Demant (2014) destaca que, desde sua fundação, o Islã incorporou um caráter expansionista. O próprio conceito de jihad, “esforço em favor de Deus”, estabelece a necessidade de militar em favor da fé e garantir que a “verdade” revelada por Deus ao profeta Muhammad se espalhe pelo mundo. Ainda em vida, o profeta unificou a Península Arábica e, após a sua morte, seus sucessores, mas não apenas eles, garantiram que a religião se espalhasse. Isso pois
+          </p>
+		  <blockquote class="border-l-4 border-[#CC6600] pl-4 italic mb-4">
+          <p>A expansão era inerente ao Islã e, em algumas décadas levou a conquista do Oriente Médio e da África do Norte, seguida pela incorporação islâmica de outras regiões: Espanha, partes da Índia, da Indonésia, China, África Negra entre outras (DEMANT, 2014, p. 37).</p>
+          </blockquote>
+          <p class="mb-4 text-black leading-relaxed">
+            Como destacado por Leenhard (2012), a religião constitui um espaço de reconhecimento e de representação para as sociedades em torno do sagrado. Assim, é natural que devido à expansão geográfica sofrida pelo Islã e seu contato com culturas e sociedades diversas, ele tenha sofrido adaptações, “misturas” e tenha se moldado ao ambiente no qual foi inserido. Além disso, as formas como foi inserido, também definiram as práticas em torno da fé.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Mesmo permeado por particularidades, características não homogêneas e por divisões internas, o Islã foi representado pelo Ocidente como uma massa uniforme através de um “discurso orientalista” (SAID, 2007) que coloca o Islã na posição de oposto. Carregado de estereótipos, as visões construídas acerca dessa religião justificam e validam os discursos reducionistas e preconceituosos que tratam a religião como bárbara, violenta e, ao mesmo tempo, exótica.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            É importante salientar que a ideia de que existam múltiplos “Islãs” poderia ser vista como desrespeitosa ou mesmo herética. Líderes religiosos de diferentes vertentes e nacionalidades, juristas muçulmanos, teólogos e os próprios fiéis são enfáticos ao afirmar que só existe um Islã, pois sua fé está calcada na ideia básica e imutável da <span class="shahadah-highlight" tabindex="0" role="button" aria-describedby="shahadah-popup-desc">Shahadah</span>: “Não há nenhuma divindade além de Deus e Muhammad é o seu profeta”.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            O discurso perante as práticas religiosas, no que diz respeito aos seus aspectos estruturantes e normativos, no molde pré-definido, perseguido e debatido pelas autoridades religiosas (imãs, sheiks, juristas islâmicos e filósofos das escolas de pensamento muçulmanas), pode definir ou mesmo descrever condutas rígidas e normativas. Todavia, é importante destacar que as práticas religiosas cotidianas constituem e atravessam as subjetividades, às quais são capazes de forjar elementos e práticas religiosas que não saem do texto dogmático do livro sagrado, ou dos debates entre os juristas, mas das necessidades do cotidiano. Por isso, é possível identificar uma rica variedade de comunidades muçulmanas que compõe a unidade do Islã com características distintas.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            A ideia de que a religião é uma só não elimina o fato de que a construção histórica das comunidades muçulmanas no mundo foi múltipla e variada. Assim, é possível falar em uma História do Islã e em múltiplas Histórias das práticas muçulmanas e das comunidades que formaram e desenvolveram diferentes interpretações religiosas, a partir dos contextos históricos, culturais, religiosos e sociais aos quais tiveram acesso. Desta maneira, o estudo da História do Islã e dos muçulmanos pode possibilitar o estudo de diferentes realidades históricas, em diferentes regiões do globo.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            As diferentes interpretações do Islã e das práticas religiosas são elementos característicos desta religião, devido à forma como o Islã foi disseminado, após a morte do Profeta Muhammad, seu fundador (DEMANT, 2014). Isto quer dizer que a coletividade muçulmana não é homogênea, pois, ao longo de sua história, ela passou por várias divisões e diversas vertentes e interpretações foram criadas, gerando diferentes formas de professar e praticar o Islã.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Convido você a assistir ao vídeo a seguir, sobre as correntes dentro do Islã:
+          </p>
+          <div class="video-responsive" aria-label="Expansão história do Islã e correntes/vertentes no Islã.">
+            <iframe src="https://www.youtube.com/embed/1aRZoJdVoLE" title="Expansão história do Islã e correntes/vertentes no Islã." allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Agora, assista e analise os materiais a seguir:
+          </p>
+          <ul class="list-disc list-inside mb-4 text-black">
+            <li><a href="https://www.youtube.com/shorts/bTfBVO4Kauk" target="_blank" rel="noopener noreferrer" class="ebook-link">https://www.youtube.com/shorts/bTfBVO4Kauk</a> - Reels ou Shorts disponível nos perfis @falafatuma “Como surgiram as vertentes xiitas e sunitas na religião islâmica?”</li>
+            <li><a href="https://www.youtube.com/watch?v=VQfLYh-XGqk" target="_blank" rel="noopener noreferrer" class="ebook-link">https://www.youtube.com/watch?v=VQfLYh-XGqk</a> - Vídeo do canal @falafatuma no Youtube sobre a “Ashouraa”, celebração religiosa do muçulmanos xiitas;</li>
+            <li><a href="https://www.youtube.com/shorts/jLu0GHHruHg" target="_blank" rel="noopener noreferrer" class="ebook-link">https://www.youtube.com/shorts/jLu0GHHruHg</a> - Short do Youtube “O que é sufismo? Em apenas um minuto!”</li>
+          </ul>
+          <p class="mb-4 text-black leading-relaxed">
+            Você já tinha ouvido falar sobre diferentes vertentes ou correntes dentro do Islã? Ou já ouviu o termo “xiita” ser usado como sinônimo de radical? Como você acredita que esses materiais possam ser utilizados em suas aulas? Faça suas anotações no seu material de estudos.
+          </p>
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+            <button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button>
+          </div>
+        `;
+      }
+      if (trilhaId === 'trilha2' && parteNum === '3') {
+        // Conteúdo exclusivo para Parte 3 da Trilha 2 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">O Islã, os muçulmanos e seus conceitos</h1>
+
+          <p>Bem-vindo(a) à parte 3 da segunda trilha de aprendizagem deste curso de formação! Nela será apresentado o <strong>Vocabulário de conceitos históricos para o estudo da História do Islã e dos muçulmanos</strong>, produto didático resultante da dissertação de mestrado COSTA, Jéssica Pereira da. <em>O estudo da História do Islã e dos muçulmanos na educação básica: conceitos e representações</em>. Dissertação (Mestrado em História) – UCS. Caxias do Sul, p. 107, 2016.</p>
+
+          <div class="video-responsive" aria-label="Expansão história do Islã e correntes/vertentes no Islã.">
+            <iframe src="https://www.youtube.com/embed/cL9LEO9oGvE" title="Expansão história do Islã e correntes/vertentes no Islã." allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+
+          <p>Acesse aqui uma seleção de conteúdos das redes sociais que podem ser utilizados em conjunto com o Vocabulário, ao conceituar algum aspecto do Islã:</p>
+
+          <ul>
+            <li><strong>Reels – Hyatt - véu:</strong> <a href="https://www.instagram.com/p/COWSA6hgW3l/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Reels – Hyatt – abluções:</strong> <a href="https://www.instagram.com/p/COG2nPmgDvW/?utm_source=ig_web_copy_link" target="_blank"class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Vida nas Arábias – Roupas tradicionais:</strong> <a href="https://www.instagram.com/p/CPydtZ7ns88/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Vida nas Arábias – Véu / Mulheres muçulmanas:</strong> <a href="https://www.instagram.com/p/CNPtsKYHU9p/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a> | <a href="https://www.instagram.com/p/CKXgjwOnuDc/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mariam – Islã não é país:</strong> <a href="https://www.instagram.com/p/CP1xjeFHfl2/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mariam – Mulheres muçulmanas:</strong> <a href="https://www.instagram.com/p/CPqwJMPHfcf/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mariam – Véu:</strong> <a href="https://www.instagram.com/p/CORHJu6nUVD/?utm_source=ig_web_copy_link" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mag Halat – Todo muçulmano é árabe?</strong> <a href="https://www.instagram.com/reel/DAMhidcyDcT/?igsh=bzkyYnprcXU2ZG10" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mag Halat – Por que as mulheres muçulmanas usam hijab?</strong> <a href="https://www.instagram.com/reel/C_tnZt7S4xn/?igsh=ZzJqeGU4dWlwa2Fz" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Mariam Chami – Realidade das muçulmanas:</strong> <a href="https://www.instagram.com/reel/CHTv7I9Hep2/?igsh=MThwem53eDNqaHp5bA==" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+            <li><strong>Hyatt Omar – Uso do Hijab (Dia mundial do Hijab):</strong> <a href="https://www.instagram.com/tv/CZcO5mjqbbh/?igsh=MXczaHdoNGRkeG9wNA==" target="_blank" class="highlight-orange" rel="noopener noreferrer">Ver vídeo</a></li>
+          </ul>
+
+          <h3>Canal Fala, Fatuma</h3>
+          <ul>
+            <li><strong>Por que usamos o Hijab?</strong> – <a href="https://youtu.be/C5PpqW5oEHM" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>Quais são os direitos das mulheres no Islam?</strong> – <a href="https://youtu.be/sBibg-wUYKM" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>11 coisas que toda muçulmana já ouviu:</strong> <a href="https://www.youtube.com/watch?v=KjED5XMHZlM" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>Série “Profissionais que usam hijab”</strong> – <a href="https://www.youtube.com/watch?v=FGdSxF7c9H8&list=PLU5JvxZfjcehi0nFF7WB_uUd1oIzsKQZO" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>Por que rezamos cinco vezes por dia?</strong> – <a href="https://www.youtube.com/watch?v=g-ZPIxHwcjg" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>Estereótipos sobre os árabes</strong> – <a href="https://www.youtube.com/watch?v=Z1EDCleiqxk&list=PLRiBSvf4sZjVFLsBBzf-dso26xA-Cxqw0" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+            <li><strong>Como foi começar a usar o hijab?</strong> – <a href="https://www.youtube.com/watch?v=Z3Az3wZJoHM" target="_blank" class="highlight-orange" rel="noopener noreferrer">Assistir</a></li>
+          </ul>
+
+          <h3>Agora é a sua vez!</h3>
+          <p>Faça uma busca nas redes sociais que você costuma utilizar e tente encontrar materiais sobre o Islã e os muçulmanos. Anote algumas coisas:</p>
+
+          <ul>
+            <li>Como você realizou a procura? (Quais palavras, termos ou hashtags usou?)</li>
+            <li>Que tipo de material sua busca encontrou?</li>
+            <li>Você consegue identificar alguns conceitos que estudamos como <strong>islamofobia</strong> ou <strong>orientalismo</strong> neles?</li>
+            <li>Algum desses conteúdos foi produzido por um ou uma muçulmana?</li>
+            <li>Você identifica alguma potencialidade didática neles? Por quê?</li>
+          </ul>
+
+          <p>Suas reflexões e percepções realizadas a partir desta atividade serão importantes para a nossa última trilha de aprendizagem, que começa a seguir. Nela, vamos abordar como as redes sociais podem ser uma ferramenta didática em sala de aula e quais os cuidados que nós, professores, precisamos ter.</p>
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+			<button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button> 
+          </div>
+        `;
+      }
+      if (trilhaId === 'trilha3' && parteNum === '1') {
+        // Conteúdo exclusivo para Parte 1 da Trilha 3 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">Redes sociais como História pública, fontes históricas e o Tempo presente</h1>
+          <p class="mb-4">
+            Leia com atenção o que é proposta a seguir:
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            A chamada Escola dos Annales, que ampliou o conceito de documento histórico para além dos textos oficiais escritos, Almeida (2011) ainda acredita que há certa resistência da Academia quanto às fontes históricas digitais. Isso ocorre, em parte, por um resquício da tradição positivista acrescido de suspeitas que são justificadas pela ausência de amplas reflexões teórico-metodológicas sobre o tema. O pesquisador deixa claro que os estudos ainda são recentes, mas que isso não pode justificativa para desconsiderar o uso destas fontes e, ainda, para eximir o pesquisador que opta por utilizá-las de refletir teórica e metodologicamente sobre elas, o que caracteriza o campo como em construção (ALMEIDA, 2011).
+          </p>
+		  <blockquote class="border-l-4 border-[#CC6600] pl-4 italic mb-4">
+          <p>Os primeiros trabalhos que utilizam documentos digitais são muito recentes e, de uma maneira geral, não realizam esta tarefa. Para que os historiadores aceitem definitivamente os documentos digitais enquanto fontes primárias, é necessária a sistematização teórica e metodológica que vai pautar esta prática. Isto só será concretizado quando houver um número significativo de pesquisas que utilizem fontes digitais. O método será construído analisando os erros e acertos efetuados nesse processo. Entretanto, a escassez de referenciais não pode justificar uma falta de preocupação com o método (...). A palavra de ordem é adaptação. É compreensível que a historiografia não acompanhe imediatamente todas as evoluções tecnológicas da sociedade contemporânea. Todavia, tratando-se de informática, as evoluções são muito rápidas, os impactos sociais são extremamente significativos e a necessidade de adaptação torna-se mais urgente (ALMEIDA, 2011, p. 11).</p>
+          </blockquote>
+          <p class="mb-4 text-black leading-relaxed">
+            Ignorar as fontes digitais e a internet para compreender o tempo presente é negligenciar uma das esferas potencialmente mais relevante da História Pública, que está em maior contato com os alunos da educação básica. Durante muito tempo, ao falar em História Pública, vinham à mente produções midiáticas (como filmes, séries e novelas) ou, até mesmo, meios mais tradicionais de popularização e circulação do conhecimento histórico para o grande público, por exemplo, as exposições ou as intervenções, pensadas por espaços de memória, como os museus.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Contudo, a internet tem sido um dos meios mais profícuos em divulgar e expandir o acesso a novos e a antigos produtos de História Pública. Ela serve como repositório de informações sobre produtos e produções audiovisuais diversas, é útil na criação de conteúdos originais em plataformas variadas (blogs, redes sociais, sites, etc.), serve como repositório de armazenamento e busca de produções preexistentes (arquivos de rádio e TV, filmes, documentários, acervos digitalizados de museus e arquivos, entre outros).
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Rovai (2020) salienta que a produção de conhecimento histórico fora dos padrões metodológicos da Academia sempre foi vista com certa desqualificação e desconfiança. Ao mesmo tempo, a sociedade vivencia o impacto da temporalidade dos nossos dias, que exige ações rápidas e respostas velozes frente ao turbilhão de informações que explodem a todo instante, através do meio digital.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Talvez pelo preciosismo acadêmico, talvez pelo receio teórico-metodológico ou pelo desconhecimento dos usos das diferentes plataformas, mas no que tange à produção de conhecimentos históricos nos meios digitais, a História, com o seu rigor metodológico e seu compromisso com a análise crítica da realidade, foi suplantada pela multiplicidade de narrativas sobre o passado. Essas narrativas podem ser permeadas por inconsistências históricas, anacronismos, manipulações ideológicas e usos políticos do passado (ROVAI, 2020) que produzem perigosas interpretações e distorções sobre a História e a memória, em especial, de assuntos sensíveis, tais como os ligados aos genocídios, massacres, história dos grupos minoritários e marginalizados, golpes políticos, História das Religiões e Religiosidades, entre outros.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Ao pretender construir uma análise histórica tão recente, é preciso destacar a importância do trabalho com esta História, da qual o próprio historiador faz parte, onde seus sujeitos de estudo podem “fiscalizar” seu trabalho de pesquisador (FERREIRA, 2000). O historiador é responsável por permitir que a partir da análise histórica se compreenda as imbrincadas redes de relações que constituem o corpus social.
+          </p>
+		  <blockquote class="border-l-4 border-[#CC6600] pl-4 italic mb-4">
+          <p>A história do tempo presente permite uma acuidade particular para equacionar o entendimento das relações entre a ação voluntária e a consciência dos homens e constrangimentos desconhecidos que a encerram e a limitam. Melhor dizendo, a história do tempo presente pode permitir com mais facilidade a necessária articulação entre a descrição das determinações e das interdependências desconhecidas que tecem os laços sociais. Assim, a história do tempo presente constitui um lugar privilegiado para uma reflexão sobre as modalidades e os mecanismos de incorporação do social pelos indivíduos de uma mesma formação social. Do exposto, fica óbvia a contribuição da história oral para atingir esses objetivos (FERREIRA, 2000, p.123).</p>
+          </blockquote>
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+		    <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+            <button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button> 
+          </div>
+        `;
+      }
+	  if (trilhaId === 'trilha3' && parteNum === '2') {
+        // Conteúdo exclusivo para Parte 2 da Trilha 3 conforme solicitado
+        return `
+          <h1 class="text-3xl font-bold mb-4">As redes sociais e o ensino de História – possibilidades e desafios</h1>
+          <p class="mb-4">Olá docente! Chegamos a última parte de nosso curso de formação. Leia as manchetes e postagens a seguir:</p>
+          <div class="mb-4">
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_8_trilha_3_parte_2.jpg" alt="Imagem ilustrativa para a parte 2 da trilha 3 mostrando manchetes e postagens sobre redes sociais e ensino" class="rounded shadow-md max-w-full h-auto" />
+          </div>
+          <p class="mb-4 italic">
+            “Pesquisas mostram que a Geração Z prefere fazer buscas em plataformas como o <span class="special-highlight" tabindex="0" role="button" data-popup="popupTikTok">TikTok</span> do que no Google. Cerca de 40% da Geração Z optam pelo TikTok ou Instagram na hora de fazer uma pesquisa por produto ou estabelecimento.”
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Disponível em: <a href="https://sebrae.com.br/sites/PortalSebrae/artigos/por-que-a-geracao-z-pesquisa-mais-no-tiktok-do-que-google,09bb6e1caecb6810VgnVCM1000001b00320aRCRD" target="_blank" rel="noopener noreferrer" class="ebook-link">https://sebrae.com.br/sites/PortalSebrae/artigos/por-que-a-geracao-z-pesquisa-mais-no-tiktok-do-que-google,09bb6e1caecb6810VgnVCM1000001b00320aRCRD</a>
+          </p>
+          <div class="mb-4">
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_9_trilha_3_parte_2.jpg" alt="Imagem ilustrativa para a parte 2 da trilha 3 mostrando postagens sobre politização da nova geração" class="rounded shadow-md max-w-full h-auto" />
+          </div>
+          <p class="mb-4 italic">
+            DESCOLADOS DA POLÍTICA TRADICIONAL | Nova geração extrai informação de comentários e está alienada da política tradicional. Apesar disso, os jovens estão se politizando por canais alternativos como influenciadores de maquiagem e estilo de vida no Instagram e YouTube, games online, canais de empreendedorismo, tiktokers, cantores gospel, gurus de investimento e rappers. Pesquisa qualitativa realizada no Brasil, Argentina, Colômbia e México mostra que os jovens se informam sobre política por meio de canais supostamente não politizados, enquanto rejeitam a política tradicional e meios abertamente partidarizados. O trabalho foi coordenado pela socióloga Esther Solano, professora da Unifesp, e pela cientista política Camila Rocha, autora do livro "Menos Marx, mais Mises: o liberalismo e a nova direita no Brasil". Segundo o estudo, encomendado pela Luminate, a nova geração nos quatro países tem formas alternativas de politização que passam por circuitos online pouco explorados pelas gerações anteriores.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Disponível em: <a href="https://www.instagram.com/p/CZPk04bM30_/?igsh=bDN5ZnhwcnJmZXcw" target="_blank" rel="noopener noreferrer" class="ebook-link">https://www.instagram.com/p/CZPk04bM30_/?igsh=bDN5ZnhwcnJmZXcw</a>
+          </p>
+          <div class="mb-4">
+            <img src="https://raw.githubusercontent.com/JPCosta1/Narrativas/refs/heads/Imagens/Imagem_10_trilha_3_parte_2.jpg" alt="Imagem ilustrativa para a parte 2 da trilha 3 mostrando postagens sobre desinformação disfarçada de ciência" class="rounded shadow-md max-w-full h-auto" />
+          </div>
+          <p class="mb-4 text-black leading-relaxed">
+            Disponível em: <a href="https://jornal.usp.br/atualidades/desinformacao-disfarcada-de-ciencia/" target="_blank" rel="noopener noreferrer" class="ebook-link">https://jornal.usp.br/atualidades/desinformacao-disfarcada-de-ciencia/</a>
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            As redes sociais tiveram um crescimento absurdo a partir do ano de 2004 com o advento da chamada <span class="highlight-orange" tabindex="0" role="button" data-popup="popupWeb2">Web 2.0</span>, de lá para o cá o número de usuários só cresceu e a forma como as pessoas no mundo passaram a consumir notícias, entretenimento, informação e cultura foi modificada. De acordo com Lorenzo (2013), existem diferenças conceituais entre redes sociais, <span class="highlight-orange" tabindex="0" role="button" data-popup="popupMidiasDigitais">mídias digitais</span> e mídias sociais, sendo que as redes sociais "são formas de representar relacionamentos afetivos ou profissionais dos seres entre si, em forma de rede ou comunidade” (LORENZO, 2013, p. 20).
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Essas representações de relacionamentos que ocorrem no meio digital são mediadas por diferentes sites, plataformas, aplicativos ou espaços específicos que permitem aos usuários compartilharem dados, informações, experiências, vivências, além de promoverem à relação entre os membros que possuem interesses em comum através das ferramentas de busca e dos algoritmos, os quais identificam as preferências dos usuários a partir de suas buscas e interações. Já as mídias sociais, nas concepções de Lorenzo (2013), são todas as interações pessoais feitas no meio digital quando ocorre a produção de conteúdos de “muitos para muitos”. Sendo assim, as redes sociais fazem parte das mídias sociais.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Segundo dados da pesquisa promovida pela Digital 2022 April Global Statshot Report, as redes sociais mais usadas no Brasil são, em primeiro lugar o WhatsApp, seguido por YouTube, Instagram, Facebook e <span class="highlight-orange" tabindex="0" role="button" data-popup="popupTikTok">TikTok</span>. Contudo, quando a faixa etária da pesquisa é modificada e são analisadas as redes sociais mais utilizadas pelos adolescentes brasileiros, o Instagram passa para primeiro lugar e o TikTok sobe para terceiro.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Com a pandemia do <span class="highlight-orange" tabindex="0" role="button" data-popup="popupCovid19">Covid-19</span>, iniciada em 2020, o uso das redes sociais cresceu em até 40% no Brasil, segundo dados da pesquisa realizada pela Kantar Ibope. A mesma pesquisa indica que o principal veículo de acesso dos usuários é o <span class="highlight-orange" tabindex="0" role="button" data-popup="popupSmartphone">smartphone</span>. Essas pesquisas indicam que o padrão de consumo de imagens e representações midiáticas foi modificado pela relação que as pessoas passaram a estabelecer com as redes sociais. Nas redes, pode-se encontrar uma enorme quantidade de produções, dos mais variados gêneros e sobre todos os assuntos possíveis e imagináveis, inclusive, conteúdos que produzem conhecimento histórico.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Embora possam ser perigosos veículos para a disseminação de preconceitos e estereótipos, esses materiais também podem ser ferramentas importantes na construção de pontes e diálogos entre o conteúdo trabalhado em sala de aula e a vivência dos alunos. Esse fato ocorre quando usamos ferramentas e formatos que eles estão habituados, ao mesmo tempo em que se propõe uma orientação pedagógica da forma como eles podem selecionar e filtrar o conteúdo que consomem.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            O ensino de História precisa estar atento às novas demandas e aos novos potenciais que a variedade e a grande quantidade de conteúdo nas redes sociais oferecem aos estudantes. Diferente de outros tempos, atualmente, as redes sociais possuem mais impacto na construção de representações para crianças e adolescentes do que a televisão aberta, o cinema ou a literatura.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Segundo a pesquisa TIC Kids Online Brasil 2018, realizada pelo Comitê Gestor da Internet no Brasil, por meio do Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação do <span class="highlight-orange" tabindex="0" role="button" data-popup="popupNucleo">Núcleo de Informação e Coordenação do Ponto BR</span>, 86% dos jovens entre 9 e 17 anos utilizam a internet de forma cotidiana, seja por acesso no próprio domicílio, seja através da escola. A pesquisa ressalta que esse acesso varia de acordo com a região, sendo o maior percentual entre crianças e adolescentes das regiões Sul e Sudeste do Brasil. A mesma pesquisa divulgou que 8 em cada 10 adolescentes assistem a vídeos, programas ou séries através da internet. Além disso, 82% do público nesta faixa etária possui perfil em ao menos uma rede social, sendo que o percentual fica em 97% na faixa etária de 15 a 17 anos.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Os dados apontados acima mostram que as redes sociais são uma realidade entre as crianças e os adolescentes. Os conteúdos apresentados nestas plataformas chegam aos estudantes da educação básica de forma direta e constante e precisam ser problematizados pelos educadores. Os conteúdos são diversos e oferecem leituras da realidade, onde também constroem uma realidade intangível, própria das redes sociais. Todavia, existem muitos conteúdos sobre temáticas próprias da História enquanto ciência e enquanto disciplina que os professores e a Academia precisam se apropriar, pois esses materiais estão construindo conhecimentos históricos entre os estudantes.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Quando se olha para o mundo digital e para a forte presença das redes sociais na vida dos estudantes da educação e básica e como, muitas vezes, uma aula de História pode ser atravessada por algo que se viu, divulgou ou os alunos encontraram em conteúdos nas redes, a sensação que fica é que os professores de História estão tendo que aprender a lidar com este novo mundo de informações e de potenciais conhecimentos. Enquanto isso, os historiadores e a Academia resistem em considerá-lo como um campo de estudos sobre o qual é preciso ter propriedade, domínio e, acima de tudo, autoridade.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            Enquanto a Academia despreza o que é produzido nas mídias sociais, considerando apenas pseudociência, Fake News ou conteúdo manipulável e restringe sua voz para os muros das Universidades e centros de pesquisa, alunos e alunas de todo o país consomem esses conteúdos, que colaboram na construção de suas visões de mundo e seu entendimento da realidade. É responsabilidade dos professores-historiadores mediar essa construção, preparar os alunos para avaliarem as publicações, oferecer ferramentas para que eles sejam capazes de “ler”, interpretar e avaliar esses conteúdos consumidos, a fim de construírem uma visão crítica sobre a realidade que os cerca e que se apresenta a eles.
+          </p>
+          <p class="mb-4 text-black leading-relaxed">
+            As redes sociais possuem muitos problemas e desafios, mas também estão repletas de conteúdos que podem ser introduzidos em sala de aula, como ferramentas de ensino. Não se trata de, nas aulas de História, colocar os alunos para acessarem as redes sociais, sem supervisão ou sem critérios. Como qualquer material de ensino, ao serem usadas como ferramentas de ensino, as redes sociais e seus conteúdos não encontrão fim em si mesmas. Elas carecem da mediação do professor, que deve ser capaz de avaliar os conteúdos e transformar seus potenciais didáticos em, efetivamente, ferramentas de ensino.
+          </p>
+          <!-- Navigation buttons -->
+          <div class="nav-buttons" aria-label="Navegação entre partes" style="">
+            <button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>
+          </div>
+
+          <!-- Course completion button - separated from navigation -->
+          <div class="mt-8 flex justify-center">
+            <button
+              id="btn-concluir"
+              class="bg-[#CC6600] text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-[#b35900] focus:outline-none focus:ring-2 focus:ring-[#CC6600] focus:ring-opacity-50 transition-all duration-200 transform hover:scale-105"
+              aria-label="Concluir Curso"
+            >
+              <span class="flex items-center">
+                <span class="mr-2">Concluir Curso</span>
+                <i class="fas fa-check-circle"></i>
+              </span>
+            </button>
+          </div>
+        `;
+      }
+      // Default content for other parts with navigation buttons
+      const title = trilhaId === 'trilha1' && parteNum === '2' ? "O Orientalismo – “Oriente como invenção do Ocidente”" : `Trilha ${trilhaId.slice(-1)} - Parte ${parteNum}`;
+      // Determine which buttons to show based on rules and transitions
+      let showBack = true;
+      let showNext = true;
+      let nextPartId = `${trilhaId}-parte${parseInt(parteNum) + 1}`;
+      let backPartId = `${trilhaId}-parte${parseInt(parteNum) - 1}`;
+
+      // Special cases for first and last parts
+      if (trilhaId === 'trilha1' && parteNum === '1') {
+        showBack = false;
+      }
+      if (trilhaId === 'trilha3') {
+        // Trilha 3 has only 2 parts
+        if (parteNum === '2') {
+          showNext = false;
+        }
+      }
+      // For Trilha 1 and 2 last parts, next goes to next trilha part 1
+      if (trilhaId === 'trilha1' && parteNum === '3') {
+        nextPartId = 'trilha2-parte1';
+      }
+      if (trilhaId === 'trilha2' && parteNum === '3') {
+        nextPartId = 'trilha3-parte1';
+      }
+      // For parts beyond max, hide next
+      const maxParts = { trilha1: 3, trilha2: 3, trilha3: 2 };
+      if (parseInt(parteNum) >= maxParts[trilhaId]) {
+        showNext = false;
+      }
+      if (parseInt(parteNum) <= 1) {
+        showBack = false;
+      }
+
+      // Compose navigation buttons html
+      let navButtonsHtml = '<div class="nav-buttons" aria-label="Navegação entre partes">';
+      if (showBack) {
+        navButtonsHtml += `<button id="btn-voltar" class="nav-button" aria-label="Voltar para a parte anterior">Voltar</button>`;
+      }
+      if (showNext) {
+        navButtonsHtml += `<button id="btn-avancar" class="nav-button" aria-label="Avançar para a próxima parte">Avançar</button>`;
+      }
+      navButtonsHtml += '</div>';
+
+      return `
+        <h1 class="text-3xl font-bold mb-4" style="">${title}</h1>
+        <p class="mb-4">
+          Conteúdo da ${title} sobre a utilização das redes sociais para o ensino do Islã.
+        </p>
+        <img src="https://placehold.co/600x400/png?text=${encodeURIComponent(title + ' mostrando professores e alunos interagindo com redes sociais em ambiente escolar')}" alt="Imagem ilustrativa da ${title} mostrando professores e alunos interagindo com redes sociais em ambiente escolar" class="mb-4 rounded shadow-md max-w-full h-auto" />
+        <audio controls class="mb-4 w-full max-w-lg" preload="none" aria-label="Áudio explicativo da ${title}">
+          <source src="media/audio/${trilhaId}-parte${parteNum}.mp3" type="audio/mpeg" />
+          Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <video controls class="mb-4 w-full max-w-lg rounded" preload="none" aria-label="Vídeo explicativo da ${title}">
+          <source src="media/videos/${trilhaId}-parte${parteNum}.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <p>
+          Este conteúdo aborda aspectos específicos da ${title} para auxiliar no aprendizado e aplicação prática.
+        </p>
+        ${navButtonsHtml}
+      `;
+    }
+
+    // Popup contents for highlighted words
+    const popupContents = {
+      popup1: "O Ocidente refere-se aos países da Europa, América do Norte e outras regiões influenciadas culturalmente por essas áreas, frequentemente contrastado com o Oriente Médio e outras regiões do mundo.",
+      popup2: "A estimativa era que, até o final de 2021, todas as tropas estrangeiras deixassem o Afeganistão, encerrando uma presença militar de quase 20 anos no país.",
+      popup3: "O Talibã é um grupo islâmico fundamentalista que governou o Afeganistão entre 1996 e 2001 e retomou o controle do país em 2021.",
+      popup4: "As exigências humanitárias incluíam o respeito aos direitos das mulheres, combate ao terrorismo e entrega dos líderes da Al-Qaeda.",
+      shahadahPopup: "Em língua portuguesa existem outras grafias para o testemunho de fé, como Chahada. Além disso, a tradução da frase em árabe pode apresentar variações, dependendo do material consultado. Essas variações não alteram o seu significado. A tradução utilizada neste trabalho foi retirada de SARDAR, Ziauddin. Em que acreditam os muçulmanos? Trad. Marilene Tombini. Rio de Janeiro: Civilização Brasileira, 2010.",
+      // Popups for Trilha 2 Parte 1
+      'popup-islam': "O Islã é uma religião monoteísta abraâmica articulada pelo Alcorão, um texto considerado pelos seus seguidores como a palavra literal de Deus (Alá), e pelos ensinamentos e exemplos normativos (a Suna, parte do hádice) de Maomé, considerado pelos fiéis como o último profeta de Deus.",
+      'popup-deus': "No Islã, Deus é conhecido como Alá (Allah em árabe), que significa 'O Deus' ou 'O Único Deus'. É considerado o criador e sustentador de todo o universo, único, eterno e todo-poderoso.",
+      'popup-muhammad': "Muhammad (c. 570-632 d.C.) é considerado pelos muçulmanos como o último profeta enviado por Deus para a humanidade. Nasceu em Meca e recebeu as revelações do Alcorão através do anjo Gabriel (Jibril).",
+      'popup-submissao': "A palavra 'Islã' deriva da raiz árabe s-l-m, que significa 'submissão' ou 'entrega'. Refere-se à submissão completa à vontade de Deus (Alá). Um muçulmano é aquele que se submete a Deus.",
+      'popup-conversao': "A conversão ao Islã é um processo pelo qual uma pessoa abraça a fé islâmica, geralmente através da recitação da Shahada (declaração de fé) e da aceitação dos princípios fundamentais do Islã.",
+      // Popups for Trilha 3 Parte 2
+      'popupTikTok': "Maiores informações sobre a pesquisa disponível em: https://resultadosdigitais.com.br/marketing/redes-sociais-mais-usadas-no- brasil/. Acesso em: 23 jan. 2023.",
+      'popupWeb2': "Segundo Almeida (2011), a logística tecnológica que deu origem à web foi criada por Tim Berners-Lee, a partir do princípio World Wide Web (www, ou simplesmente web), como um padrão para o gerenciamento de arquivos que se tornou norma na Internet. Esse novo modelo de gerenciamento popularizou a Internet entre os usuários domésticos, pois facilitava as buscas por informações ao basear-se no princípio do hipertexto, onde blocos de informações eram reconhecidos e conectados com outros blocos de informações através de links, que não apenas buscavam, mas complementavam informações, permitindo o avanço por entre os sites, criando uma teia e formando o ciberespaço.",
+      'popupMidiasDigitais': "Para Lorenzo (2013), as mídias digitais são todos os meios de comunicação que são baseados em tecnologia digital. ",
+      'popupCovid19': "A pandemia do Covid-19, que teve início no final do ano de 2019, chegando ao Brasil no início do ano de 2020, alterou o ano letivo a partir de março de 2020. A doença se caracteriza como uma doença viral, provocada pelo novo coronavírus, denominado SARS-COV-2. Ela é reconhecida por ser transmitida com facilidade através das gotículas de saliva, do ar e de superfícies onde o vírus sobrevive e pode chegar ao organismo através dos olhos, nariz e boca, o que o leva a se espalhar com mais facilidade em locais fechado e com aglomeração de pessoas. A doença provoca diferentes sintomas e sequelas no corpo humano: em alguns casos provoca os sintomas de um resfriado ou de uma gripe e, em casos mais graves, pode levar a insuficiência respiratória, perda de movimento e a danos neurológicos graves, entre outros sintomas. Informações consultadas em: https://coronavirus.rs.gov.br/inicial Acesso em 23 jan. 2023.",
+      'popupSmartphone': "Maiores informações sobre a pesquisa disponíveis em: https://www.kantaribopemedia.com/kantar-ibope-media-apresenta-dados- sobre-tecnologia-e-aceleracao-digital-para-masters/. Acesso em: 30 jan. 2022.",
+      'popupNucleo': "Disponível em: https://agenciabrasil.ebc.com.br/geral/noticia/2019-09/brasil-tem-243-milhoes-de-criancas-e-adolescentes- utilizando-internet Acesso em 26 de janeiro de 2022."
+    };
+
+    // Atualiza o conteúdo da área principal com animação e navegação
+    function loadContent(mainId, subId = null, partId = null, direction = 'next') {
+      if (state.isAnimating) return; // Prevent multiple clicks during animation
+      let html = '';
+      let title = '';
+      if (mainId === 'trilhas') {
+        if (subId && partId) {
+          // Parte selecionada
+          const parteNum = partId.split('parte')[1];
+          html = getTrilhaParteContent(subId, parteNum);
+          title = `Trilhas de Aprendizagem - ${subId.replace('trilha', 'Trilha ')} - Parte ${parteNum}`;
+          markPartViewed(partId);
+        } else if (subId) {
+          // Subitem selecionado (Trilha 1, 2 ou 3)
+          title = `Trilhas de Aprendizagem - ${subId.replace('trilha', 'Trilha ')}`;
+          html = `
+            <h1 class="text-3xl font-bold mb-4">${trilha1}</h1>
+            <p class="mb-4">
+              Selecione uma parte para acessar o conteúdo detalhado da ${trilha1}.
+            </p class="mb-4 text-black leading-relaxed"> 
+            Nesta primeira trilha de aprendizagens vamos refletir e debater sobre as representações construídas no Ocidente acerca do Islã e dos muçulmanos, com uma atenção especial a forma como as redes sociais agem ou influenciam essas representações. Também abordaremos a relação histórica do Ocidente e Oriente têm por meio da perspectiva do Orientalismo, na medida em que aprofundamos nossos estudos para entender que essas terminologias são construções políticas e culturais e não apenas um fatalismo geográfico e por fim, discutiremos os impactos dessas ideias para a manutenção e/ou aumento da islamofobia.
+			</p>
+          `;
+
+        } else {
+		
+		
+          // Trilhas principal selecionada
+          title = 'Trilhas de Aprendizagem';
+          html = `
+            <h1 class="text-3xl font-bold mb-4">Narrativas (Re)Conectadas: O Islã e os Muçulmanos nas aulas e nas redes</h1>
+            <p class="mb-4 text-black leading-relaxed">
+              As trilhas de aprendizagem são um caminho flexível e personalizado para adquirir conhecimento. Em um curso SCORM como "Narrativas (Re)Conectadas: O Islã e os Muçulmanos nas aulas e nas redes", elas funcionam como roteiros que permitem a você, educador ou futuro educador, explorar o conteúdo no seu próprio ritmo e de acordo com seus interesses específicos.
+            </p>
+            <h2 class="text-2xl font-bold mb-3 mt-6">O que são trilhas de aprendizagem?</h2>
+            <p class="mb-4 text-black leading-relaxed">
+              Imagine que o conhecimento sobre o Islã e os muçulmanos é uma vasta paisagem. As trilhas de aprendizagem são como caminhos pré-determinados que o guiam por essa paisagem, mas com a liberdade de desviar para explorar áreas que mais lhe chamam a atenção.
+            </p>
+            <p class="mb-4 text-black leading-relaxed">
+              Em vez de um curso linear e rígido, onde todos seguem a mesma ordem, as trilhas oferecem diferentes percursos, cada um focado em um aspecto ou nível de aprofundamento distinto.
+            </p>
+            <h2 class="text-2xl font-bold mb-3 mt-6">Como as trilhas se aplicam ao curso "Narrativas (Re)Conectadas"?</h2>
+            <p class="mb-4 text-black leading-relaxed">
+              Este curso SCORM, desenvolvido a partir de um produto educacional do Doutorado Profissional em História pela Universidade de Caxias do Sul (UCS), terá suas trilhas de aprendizagem projetadas para atender às necessidades de educadores e futuros educadores.
+            </p>
+            <p class="mb-4 text-black leading-relaxed">
+              Ele busca oferecer ferramentas e estratégias para abordar o tema em sala de aula, desde uma introdução geral ao Islã e aos muçulmanos até o combate à desinformação nas redes.
+			<p class="mb-4 text-black leading-relaxed">
+			Na <span class="highlight-orange">Trilha I</span>, vamos mergulhar nas representações do Islã e dos muçulmanos no Ocidente, com foco especial em como as redes sociais moldam e influenciam essas percepções. Analisaremos a relação histórica entre Ocidente e Oriente sob a perspectiva do Orientalismo, entendendo essas terminologias como construções políticas e culturais, e não meros acidentes geográficos. Por fim, discutiremos os impactos dessas ideias na islamofobia.
+			</p>
+			<p class="mb-4 text-black leading-relaxed">
+			Na <span class="highlight-orange">Trilha II</span>, você vai aprofundar seus conhecimentos sobre o Islã e os muçulmanos, explorando suas origens históricas, os cinco pilares da fé, as práticas religiosas e as diversas correntes existentes. Também abordaremos as diferenças culturais entre comunidades muçulmanas de distintas regiões do mundo. Para enriquecer ainda mais sua prática docente, apresentaremos um material didático valioso para o estudo da história dessa religião.
+			</p>
+			<p class="mb-4 text-black leading-relaxed">
+			Na <span class="highlight-orange">Trilha III</span>, a etapa final da sua formação, vamos analisar como as redes sociais se estabelecem como documentos históricos no tempo presente. Você verá como elas podem funcionar como iniciativas de História Pública e se tornar poderosas ferramentas pedagógicas para sua atuação como professor(a).
+			</p>
+			<p class="mb-4 text-black leading-relaxed">
+			Prepare-se para uma experiência de aprendizado enriquecedora, que te dará subsídios para desconstruir preconceitos e abordar o tema em sala de aula de forma mais completa e inclusiva.
+			</p>
+			<h2 class="text-2xl font-bold mb-3 mt-6">
+			Vamos começar essa jornada?
+			</h2>         
+		 `;
+        }
+      } else {
+        // Itens principais sem subitens
+        if (contentData[mainId]) {
+          title = contentData[mainId].title;
+          html = contentData[mainId].html;
+        } else {
+          title = 'Conteúdo não encontrado';
+          html = '<p>Conteúdo indisponível.</p>';
+        }
+      }
+      document.title = title + ' - Curso Islã';
+
+      const contentEl = document.getElementById('content');
+      state.isAnimating = true;
+
+      // Determine animation classes based on direction
+      let outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+      let inClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+
+      // Animate out current content
+      contentEl.classList.add(outClass);
+
+      contentEl.addEventListener('animationend', function handler() {
+        contentEl.removeEventListener('animationend', handler);
+        contentEl.classList.remove(outClass);
+        contentEl.innerHTML = html;
+        contentEl.classList.add(inClass);
+        contentEl.focus();
+
+        // After animation in ends, remove class and allow new animations
+        contentEl.addEventListener('animationend', function handlerIn() {
+          contentEl.removeEventListener('animationend', handlerIn);
+          contentEl.classList.remove(inClass);
+          state.isAnimating = false;
+          attachPopupListeners();
+          attachNavButtonsListeners();
+          attachContactFormListener();
+          attachShahadahListener();
+        });
+      });
+    }
+
+    // Atualiza ícones de visualização das partes
+    function updateViewedIcons() {
+      const parts = document.querySelectorAll('button[data-type="part"]');
+      parts.forEach((btn) => {
+        const partId = btn.dataset.id;
+        const icon = btn.querySelector('i');
+        if (state.viewedParts[partId]) {
+          icon.classList.remove('far', 'fa-circle');
+          icon.classList.add('fas', 'fa-check-circle');
+          icon.setAttribute('aria-label', 'Conteúdo visualizado');
+          icon.setAttribute('title', 'Conteúdo visualizado');
+        } else {
+          icon.classList.remove('fas', 'fa-check-circle');
+          icon.classList.add('far', 'fa-circle');
+          icon.setAttribute('aria-label', 'Conteúdo não visualizado');
+          icon.setAttribute('title', 'Conteúdo não visualizado');
+        }
+      });
+    }
+
+    // Marca uma parte como visualizada e persiste no sessionStorage e SCORM
+    function markPartViewed(partId) {
+      if (!state.viewedParts[partId]) {
+        state.viewedParts[partId] = true;
+        persistViewedParts();
+        updateViewedIcons();
+        // Salvar no SCORM: cmi.suspend_data (string JSON)
+        if (SCORM.init()) {
+          SCORM.setValue('cmi.suspend_data', JSON.stringify(state.viewedParts));
+          SCORM.commit();
+        }
+      }
+    }
+
+    // Persiste viewedParts no sessionStorage
+    function persistViewedParts() {
+      sessionStorage.setItem('viewedParts', JSON.stringify(state.viewedParts));
+    }
+
+    // Recupera viewedParts do sessionStorage ou SCORM suspend_data
+    function loadViewedParts() {
+      let data = sessionStorage.getItem('viewedParts');
+      if (data) {
+        try {
+          state.viewedParts = JSON.parse(data);
+        } catch {
+          state.viewedParts = {};
+        }
+      } else if (SCORM.init()) {
+        const suspendData = SCORM.getValue('cmi.suspend_data');
+        if (suspendData) {
+          try {
+            state.viewedParts = JSON.parse(suspendData);
+          } catch {
+            state.viewedParts = {};
+          }
+        }
+      }
+    }
+
+    // Atualiza o menu para mostrar itens ativos e expandir submenus
+    function updateMenu() {
+      const mainButtons = document.querySelectorAll('button[data-type="main"]');
+      mainButtons.forEach((btn) => {
+        const isActive = btn.dataset.id === state.currentMain;
+        btn.classList.toggle('bg-[#002244]', isActive);
+        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        // For Trilhas, toggle submenu
+        if (btn.dataset.id === 'trilhas') {
+          const submenu = document.getElementById('trilhas-submenu');
+          if (isActive) {
+            submenu.classList.remove('hidden');
+            btn.querySelector('i.fas').classList.add('rotate-90');
+          } else {
+            submenu.classList.add('hidden');
+            btn.querySelector('i.fas').classList.remove('rotate-90');
+          }
+        }
+      });
+
+      // Subitems Trilhas
+      const subButtons = document.querySelectorAll('button[data-type="sub"]');
+      subButtons.forEach((btn) => {
+        const isActive = btn.dataset.id === state.currentSub;
+        btn.classList.toggle('bg-[#002244]', isActive);
+        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        // Toggle parts submenu
+        const partsList = document.querySelector(
+          `ul[data-parent="${btn.dataset.id}"]`
+        );
+        if (partsList) {
+          if (isActive) {
+            partsList.classList.remove('hidden');
+          } else {
+            partsList.classList.add('hidden');
+          }
+        }
+      });
+
+      // Parts
+      const partButtons = document.querySelectorAll('button[data-type="part"]');
+      partButtons.forEach((btn) => {
+        const isActive = btn.dataset.id === state.currentPart;
+        btn.classList.toggle('bg-[#002244]', isActive);
+      });
+
+      updateViewedIcons();
+    }
+
+    // Navegação do menu
+    function onMenuClick(e) {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      const type = btn.dataset.type;
+      const id = btn.dataset.id;
+
+      if (type === 'main') {
+        if (id === 'trilhas') {
+          // Seleciona Trilhas, limpa sub e part
+          state.currentMain = id;
+          state.currentSub = null;
+          state.currentPart = null;
+        } else {
+          // Outro item principal selecionado
+          state.currentMain = id;
+          state.currentSub = null;
+          state.currentPart = null;
+        }
+      } else if (type === 'sub') {
+        // Subitem selecionado
+        state.currentMain = 'trilhas';
+        state.currentSub = id;
+        state.currentPart = null;
+      } else if (type === 'part') {
+        // Parte selecionada
+        state.currentMain = 'trilhas';
+        // subId do partId: ex: trilha1-parte1 => trilha1
+        const subId = id.split('-parte')[0];
+        state.currentSub = subId;
+        state.currentPart = id;
+      }
+
+      updateMenu();
+      loadContent(state.currentMain, state.currentSub, state.currentPart);
+    }
+
+
+    // Função para criar e mostrar popup
+    function showPopup(id, content) {
+      // Close any open popup first
+      if (state.popupOpen) {
+        closePopup(state.popupOpen);
+      }
+
+      const container = document.getElementById('popups-container');
+      const popup = document.createElement('div');
+
+      // Set proper ARIA attributes for accessibility
+      popup.setAttribute('role', 'dialog');
+      popup.setAttribute('aria-modal', 'true');
+      popup.setAttribute('aria-labelledby', `${id}-title`);
+      popup.setAttribute('aria-describedby', `${id}-desc`);
+      popup.setAttribute('tabindex', '-1');
+      
+      popup.id = id;
+      popup.className = 'fixed inset-0 flex items-center justify-center popup-overlay z-30';
+
+      // Enhanced popup structure with better accessibility
+      popup.innerHTML = `
+        <div class="bg-white rounded-lg shadow-lg p-6 popup-content relative max-w-md w-full mx-4" role="document">
+          <div class="flex justify-between items-start mb-4">
+            <h2 id="${id}-title" class="text-lg font-bold text-[#003366]">Informação</h2>
+            <button 
+              aria-label="Fechar popup" 
+              class="text-[#CC6600] hover:text-[#b35900] focus:outline-none focus:ring-2 focus:ring-[#CC6600] rounded-lg p-1 transition-colors duration-200"
+            >
+              <span aria-hidden="true" class="text-xl font-bold">&times;</span>
+            </button>
+          </div>
+          <div id="${id}-desc" class="text-black text-base leading-relaxed">
+            ${content}
+          </div>
+        </div>
+      `;
+
+      container.appendChild(popup);
+
+      // Enhanced event listeners
+      const closeButton = popup.querySelector('button');
+      const popupContent = popup.querySelector('.popup-content');
+
+      // Close button click
+      closeButton.addEventListener('click', () => closePopup(id));
+
+      // Click outside to close
+      popup.addEventListener('click', (e) => {
+        if (!popupContent.contains(e.target)) {
+          closePopup(id);
+        }
+      });
+
+      // Prevent clicks inside popup from bubbling
+      popupContent.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // Set focus to popup after a brief delay to ensure smooth transition
+      setTimeout(() => {
+        popup.focus();
+      }, 50);
+
+      state.popupOpen = id;
+      trapFocus(popup);
+
+      // Add animation class
+      popup.classList.add('animate-fadeIn');
+    }
+
+    // Enhanced close popup function
+    function closePopup(id) {
+      const popup = document.getElementById(id);
+      if (!popup) return;
+
+      // Add fade out animation
+      popup.classList.add('animate-fadeOut');
+
+      // Wait for animation to complete before removing
+      popup.addEventListener('animationend', () => {
+        popup.remove();
+        state.popupOpen = null;
+
+        // Return focus to trigger element with improved error handling
+        if (lastFocusedHighlight && document.body.contains(lastFocusedHighlight)) {
+          lastFocusedHighlight.focus();
+          lastFocusedHighlight = null;
+        }
+      }, { once: true });
+    }
+
+    // Enhanced focus trap with improved keyboard handling
+    function trapFocus(element) {
+      const focusableElements = element.querySelectorAll(
+        'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]'
+      );
+
+      if (focusableElements.length === 0) return;
+
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+      let currentFocus = null;
+
+      element.addEventListener('keydown', function(e) {
+        // Track current focus
+        currentFocus = document.activeElement;
+
+        switch (e.key) {
+          case 'Tab':
+            if (e.shiftKey) {
+              if (currentFocus === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+              }
+            } else {
+              if (currentFocus === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+              }
+            }
+            break;
+
+          case 'Escape':
+            e.preventDefault();
+            closePopup(state.popupOpen);
+            break;
+
+          case 'Enter':
+            if (currentFocus.tagName.toLowerCase() === 'button') {
+              e.preventDefault();
+              currentFocus.click();
+            }
+            break;
+        }
+      });
+
+      // Handle focus leaving the popup
+      element.addEventListener('focusout', (e) => {
+        if (!element.contains(e.relatedTarget)) {
+          firstFocusable.focus();
+        }
+      });
+    }
+
+    // Add necessary CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.2s ease-out forwards;
+      }
+      .animate-fadeOut {
+        animation: fadeOut 0.2s ease-out forwards;
+      }
+    `;
+    document.head.appendChild(style);
+
+    let lastFocusedHighlight = null;
+
+    // Anexa listeners para as palavras destacadas que abrem popups
+    function attachPopupListeners() {
+      // Função para adicionar listeners a elementos com popup
+      function addPopupListeners(elements) {
+        elements.forEach((el) => {
+          el.addEventListener('click', () => {
+            lastFocusedHighlight = el;
+            const popupId = el.dataset.popup;
+            if (popupId) {
+              // Find summary for material popups
+              if (popupId.startsWith('material-popup-')) {
+                const index = parseInt(popupId.replace('material-popup-', ''), 10);
+                if (!isNaN(index) && materiaisObras[index]) {
+                  showPopup(popupId, materiaisObras[index].summary);
+                }
+              } else if (popupContents[popupId]) {
+                showPopup(popupId, popupContents[popupId]);
+              }
+            }
+          });
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              lastFocusedHighlight = el;
+              const popupId = el.dataset.popup;
+              if (popupId) {
+                if (popupId.startsWith('material-popup-')) {
+                  const index = parseInt(popupId.replace('material-popup-', ''), 10);
+                  if (!isNaN(index) && materiaisObras[index]) {
+                    showPopup(popupId, materiaisObras[index].summary);
+                  }
+                } else if (popupContents[popupId]) {
+                  showPopup(popupId, popupContents[popupId]);
+                }
+              }
+            }
+          });
+        });
+      }
+
+      // Adiciona listeners para todas as classes de popup
+      const highlightOrange = document.querySelectorAll('.highlight-orange');
+      const highlightSpecial = document.querySelectorAll('.highlight-special');
+      const specialHighlight = document.querySelectorAll('.special-highlight');
+      
+      addPopupListeners(highlightOrange);
+      addPopupListeners(highlightSpecial);
+      addPopupListeners(specialHighlight);
+    }
+
+    // Anexa listener para palavra Shahadah*
+    function attachShahadahListener() {
+      const shahadahEls = document.querySelectorAll('.shahadah-highlight');
+      shahadahEls.forEach((el) => {
+        el.addEventListener('click', () => {
+          lastFocusedHighlight = el;
+          showPopup('shahadahPopup', popupContents.shahadahPopup);
+        });
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lastFocusedHighlight = el;
+            showPopup('shahadahPopup', popupContents.shahadahPopup);
+          }
+        });
+      });
+    }
+
+    // Anexa listeners para botões de navegação dentro do conteúdo
+    function attachNavButtonsListeners() {
+      const btnAvancar = document.getElementById('btn-avancar');
+      const btnVoltar = document.getElementById('btn-voltar');
+      const btnConcluir = document.getElementById('btn-concluir');
+
+      if (btnAvancar) {
+        btnAvancar.addEventListener('click', () => {
+          if (state.currentMain === 'trilhas' && state.currentSub && state.currentPart) {
+            // Avança para próxima parte
+            const currentPartNum = parseInt(state.currentPart.split('parte')[1]);
+            const trilhaNum = state.currentSub;
+            const maxParts = { trilha1: 3, trilha2: 3, trilha3: 2 };
+            let nextPartNum = currentPartNum + 1;
+            let nextTrilha = trilhaNum;
+
+            if (nextPartNum > maxParts[trilhaNum]) {
+              // Avança para próxima trilha
+              if (trilhaNum === 'trilha1') {
+                nextTrilha = 'trilha2';
+                nextPartNum = 1;
+              } else if (trilhaNum === 'trilha2') {
+                nextTrilha = 'trilha3';
+                nextPartNum = 1;
+              } else {
+                // Última parte da última trilha
+                return;
+              }
+            }
+            const nextPartId = `${nextTrilha}-parte${nextPartNum}`;
+            state.currentSub = nextTrilha;
+            state.currentPart = nextPartId;
+            updateMenu();
+            loadContent(state.currentMain, state.currentSub, state.currentPart, 'next');
+          }
+        });
+      }
+
+      if (btnVoltar) {
+        btnVoltar.addEventListener('click', () => {
+          if (state.currentMain === 'trilhas' && state.currentSub && state.currentPart) {
+            // Volta para parte anterior
+            const currentPartNum = parseInt(state.currentPart.split('parte')[1]);
+            const trilhaNum = state.currentSub;
+            let prevPartNum = currentPartNum - 1;
+            let prevTrilha = trilhaNum;
+
+            if (prevPartNum < 1) {
+              // Volta para trilha anterior
+              if (trilhaNum === 'trilha3') {
+                prevTrilha = 'trilha2';
+                prevPartNum = 3;
+              } else if (trilhaNum === 'trilha2') {
+                prevTrilha = 'trilha1';
+                prevPartNum = 3;
+              } else {
+                // Primeira parte da primeira trilha
+                return;
+              }
+            }
+            const prevPartId = `${prevTrilha}-parte${prevPartNum}`;
+            state.currentSub = prevTrilha;
+            state.currentPart = prevPartId;
+            updateMenu();
+            loadContent(state.currentMain, state.currentSub, state.currentPart, 'prev');
+          }
+        });
+      }
+
+      if (btnConcluir) {
+        btnConcluir.addEventListener('click', onConcluirClick);
+      }
+    }
+
+    // Anexa listener para formulário de contato
+    function attachContactFormListener() {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const feedback = document.getElementById('contact-feedback');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Simula envio
+        feedback.textContent = 'Enviando...';
+        feedback.classList.remove('hidden');
+        setTimeout(() => {
+          feedback.textContent = 'Mensagem enviada com sucesso!';
+          form.reset();
+        }, 1000);
+      });
+    }
+
+    // Inicialização
+    function init() {
+      // Inicializa SCORM
+      SCORM.init();
+
+      // Carrega estado de partes visualizadas
+      loadViewedParts();
+
+      // Define página inicial
+      state.currentMain = 'apresentacao';
+      state.currentSub = null;
+      state.currentPart = null;
+
+      updateMenu();
+      loadContent(state.currentMain, state.currentSub, state.currentPart);
+
+      // Eventos menu
+      document.getElementById('menu-list').addEventListener('click', onMenuClick);
+    }
+
+    // Evento concluir curso
+    function onConcluirClick() {
+      // Abre o formulário em nova aba
+      window.open('https://forms.gle/FSMjq3w1W96CCb848', '_blank');
+      
+      if (SCORM.init()) {
+        SCORM.finish();
+        alert('Parabéns! Você concluiu o curso.');
+      } else {
+        alert('Curso concluído (modo não SCORM).');
+      }
+    }
+
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>
