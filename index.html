@@ -432,7 +432,17 @@
           Vocabulário de Conceitos
         </button>
       </li>
-    </ul>
+	  <li>
+         <button
+		  data-type="main"
+		  data-id="troca"
+		  class="w-full text-left px-4 py-2 rounded hover:bg-[#002244] focus:outline-none focus:bg-[#002244]"
+		  aria-expanded="false"
+		>
+		  Troca de Experiências
+        </button>
+	  </li>
+
     <div id="social-icons" aria-label="Redes sociais">
       <a
         href="https://www.facebook.com/jessica.pereiradacosta"
@@ -891,7 +901,26 @@
           </p>
         `,
       },
-    
+      troca: {
+		title: 'Troca de Experiências',
+		html: `
+		  <h1 class="text-3xl font-bold mb-4">Troca de Experiências</h1>
+		  <p class="mb-4 text-black leading-relaxed">
+			Este espaço foi pensado para a troca de experiências e o diálogo com os docentes e futuros docentes que realizaram o curso. Nele, você encontrará planos de aula, compartilhados por aqueles que realizaram o curso e a partir dele, criaram experiências didáticas.
+		  </p>
+		  <p class="mb-4 text-black leading-relaxed">
+			Este é um espaço colaborativo e para tanto, sua formação e alimentação, depende dos cursistas. Assim, caso deseje que seu plano de aula seja publicado e disponibilizado aqui, envie-o para o e-mail 
+		    <a href="mailto:jessicapereiradacosta46@gmail.com" class="highlight-orange">jessicapereiradacosta46@gmail.com</a>. Após avaliação ele poderá compor este repositório de experiências didático-pedagógicas.
+		  </p>
+		  <p class="mb-4 text-black leading-relaxed">
+		    Abaixo, você pode baixar um modelo para orientar a sua produção de plano de aula:
+		  </p>
+	      <a href="https://github.com/JPCosta1/JPCosta/raw/refs/heads/main/modelo-plano-aula.docx" download class="nav-button" aria-label="Baixar modelo de plano de aula ">
+		    Baixar Modelo de Plano de Aula (Docx) 
+		  </a>
+  `
+},
+
     };
 
     // Conteúdo para as partes das trilhas (exemplo simples, pode ser expandido)
@@ -2057,13 +2086,13 @@
     // Evento concluir curso
     function onConcluirClick() {
       // Abre o formulário em nova aba
-      window.open('https://forms.gle/FSMjq3w1W96CCb848', '_blank');
+      window.open('https://forms.gle/hNoWT7fUCexeQTPE6 ', '_blank');
       
       if (SCORM.init()) {
         SCORM.finish();
         alert('Parabéns! Você concluiu o curso.');
       } else {
-        alert('Curso concluído (modo não SCORM).');
+        alert('Curso concluído.');
       }
     }
 
